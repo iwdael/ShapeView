@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="borderWidth" format="dimension" />
+    <attr name="borderColor" format="color" />
+    <attr name="shadowColor" format="color" />
+    <attr name="shadowRadius" format="float" />
+    <attr name="shadow" format="dimension" />
+    <attr name="lShadow" format="dimension" />
+    <attr name="tShadow" format="dimension" />
+    <attr name="rShadow" format="dimension" />
+    <attr name="bShadow" format="dimension" />
+    <attr name="shadowDx" format="dimension" />
+    <attr name="shadowDy" format="dimension" />
+    <attr name="radius" format="dimension|enum">
+        <enum name="round" value="1" />
+        <enum name="oval" value="2" />
+        <enum name="circle" value="3" />
+    </attr>
+    <attr name="ltRadius" format="dimension" />
+    <attr name="lbRadius" format="dimension" />
+    <attr name="rtRadius" format="dimension" />
+    <attr name="rbRadius" format="dimension" />
+    <attr name="progressStyle" format="enum">
+        <enum name="border" value="1" />
+        <enum name="sector" value="2" />
+        <enum name="line" value="3" />
+    </attr>
+    <attr name="progressReachColor" format="color" />
+    <attr name="progressUnReachColor" format="color" />
+    <attr name="progressStrokeWidth" format="dimension" />
+    <attr name="progressStrokeColor" format="color" />
+    <attr name="progressSolidWidth" format="dimension" />
+    <attr name="progress" format="float" />
+    <attr name="progressMax" format="float" />
+    <attr name="enableDragProgress" format="boolean" />
+    <declare-styleable name="ShapeView">
+        <attr name="android:background" />
+        <attr name="borderWidth" />
+        <attr name="borderColor" />
+        <attr name="shadowColor" />
+        <attr name="shadow" />
+        <attr name="shadowRadius" />
+        <attr name="lShadow" />
+        <attr name="tShadow" />
+        <attr name="rShadow" />
+        <attr name="bShadow" />
+        <attr name="shadowDx" />
+        <attr name="shadowDy" />
+        <attr name="radius" />
+        <attr name="ltRadius" />
+        <attr name="lbRadius" />
+        <attr name="rtRadius" />
+        <attr name="rbRadius" />
+        <attr name="progressStyle" />
+        <attr name="progressReachColor" />
+        <attr name="progressUnReachColor" />
+        <attr name="progressStrokeWidth" />
+        <attr name="progressStrokeColor" />
+        <attr name="progressSolidWidth" />
+        <attr name="progress" />
+        <attr name="progressMax" />
+        <attr name="enableDragProgress" />
+    </declare-styleable>
+
+    <declare-styleable name="ShapeTextView">
+        <attr name="android:background" />
+        <attr name="borderWidth" />
+        <attr name="borderColor" />
+        <attr name="shadowColor" />
+        <attr name="shadow" />
+        <attr name="shadowRadius" />
+        <attr name="lShadow" />
+        <attr name="tShadow" />
+        <attr name="rShadow" />
+        <attr name="bShadow" />
+        <attr name="shadowDx" />
+        <attr name="shadowDy" />
+        <attr name="radius" />
+        <attr name="ltRadius" />
+        <attr name="lbRadius" />
+        <attr name="rtRadius" />
+        <attr name="rbRadius" />
+        <attr name="progressStyle" />
+        <attr name="progressReachColor" />
+        <attr name="progressUnReachColor" />
+        <attr name="progressStrokeWidth" />
+        <attr name="progressStrokeColor" />
+        <attr name="progressSolidWidth" />
+        <attr name="progress" />
+        <attr name="progressMax" />
+        <attr name="enableDragProgress" />
+    </declare-styleable>
+
+    <declare-styleable name="ShapeRelativeLayout">
+        <attr name="android:background" />
+        <attr name="borderWidth" />
+        <attr name="borderColor" />
+        <attr name="shadowColor" />
+        <attr name="shadow" />
+        <attr name="shadowRadius" />
+        <attr name="lShadow" />
+        <attr name="tShadow" />
+        <attr name="rShadow" />
+        <attr name="bShadow" />
+        <attr name="shadowDx" />
+        <attr name="shadowDy" />
+        <attr name="radius" />
+        <attr name="ltRadius" />
+        <attr name="lbRadius" />
+        <attr name="rtRadius" />
+        <attr name="rbRadius" />
+        <attr name="progressStyle" />
+        <attr name="progressReachColor" />
+        <attr name="progressUnReachColor" />
+        <attr name="progressStrokeWidth" />
+        <attr name="progressStrokeColor" />
+        <attr name="progressSolidWidth" />
+        <attr name="progress" />
+        <attr name="progressMax" />
+        <attr name="enableDragProgress" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ShapeFrameLayout">
+        <attr name="android:background" />
+        <attr name="borderWidth" />
+        <attr name="borderColor" />
+        <attr name="shadowColor" />
+        <attr name="shadow" />
+        <attr name="shadowRadius" />
+        <attr name="lShadow" />
+        <attr name="tShadow" />
+        <attr name="rShadow" />
+        <attr name="bShadow" />
+        <attr name="shadowDx" />
+        <attr name="shadowDy" />
+        <attr name="radius" />
+        <attr name="ltRadius" />
+        <attr name="lbRadius" />
+        <attr name="rtRadius" />
+        <attr name="rbRadius" />
+        <attr name="progressStyle" />
+        <attr name="progressReachColor" />
+        <attr name="progressUnReachColor" />
+        <attr name="progressStrokeWidth" />
+        <attr name="progressStrokeColor" />
+        <attr name="progressSolidWidth" />
+        <attr name="progress" />
+        <attr name="progressMax" />
+        <attr name="enableDragProgress" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ShapeLinearLayout">
+        <attr name="android:background" />
+        <attr name="borderWidth" />
+        <attr name="borderColor" />
+        <attr name="shadowColor" />
+        <attr name="shadow" />
+        <attr name="shadowRadius" />
+        <attr name="lShadow" />
+        <attr name="tShadow" />
+        <attr name="rShadow" />
+        <attr name="bShadow" />
+        <attr name="shadowDx" />
+        <attr name="shadowDy" />
+        <attr name="radius" />
+        <attr name="ltRadius" />
+        <attr name="lbRadius" />
+        <attr name="rtRadius" />
+        <attr name="rbRadius" />
+        <attr name="progressStyle" />
+        <attr name="progressReachColor" />
+        <attr name="progressUnReachColor" />
+        <attr name="progressStrokeWidth" />
+        <attr name="progressStrokeColor" />
+        <attr name="progressSolidWidth" />
+        <attr name="progress" />
+        <attr name="progressMax" />
+        <attr name="enableDragProgress" />
+    </declare-styleable>
+</resources>

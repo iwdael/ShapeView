@@ -1,0 +1,28 @@
+apply from: './../config.gradle'
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    buildToolsVersion buidConfig.buildToolsVersion
+    compileSdkVersion buidConfig.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.iwdael.shapeview.example"
+        minSdkVersion buidConfig.minSdkVersion
+        targetSdkVersion buidConfig.targetSdkVersion
+        versionCode buidConfig.versionCode
+        versionName buidConfig.versionName
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation dependent.kotlinJdk7
+    implementation dependent.appcompat
+    implementation dependent.androidxCore
+    implementation dependent.constraintlayout
+    api project(path: ':shapeview')
+}

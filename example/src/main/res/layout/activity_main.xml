@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.iwdael.shapeview.ShapeRelativeLayout
+        style="@style/shape"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:background="#00BCD4"
+        app:shadowColor="#000000" />
+
+    <com.iwdael.shapeview.ShapeView
+        style="@style/shape"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        app:borderColor="#A1A1A1"
+        app:borderWidth="10dp" />
+
+    <com.iwdael.shapeview.ShapeRelativeLayout
+        style="@style/shape"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        app:progress="35.005"
+        app:progressMax="40"
+        app:progressReachColor="#474747"
+        app:progressSolidWidth="10dp"
+        app:progressStrokeColor="#E91E63"
+        app:progressStrokeWidth="1dp"
+        app:progressStyle="line"
+        app:enableDragProgress="true"
+        app:progressUnReachColor="#E3E3E3" />
+</LinearLayout>
