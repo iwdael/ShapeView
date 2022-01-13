@@ -7,5 +7,5 @@ package com.iwdael.shapeview
  * version: 1.0
  */
 enum class State {
-    DEFAULT, FOCUSED, PRESSED, SELECTED, CHECKED,
+    DEFAULT, FOCUSED, PRESSED, SELECTED, CHECKED, TOUCHED
 }

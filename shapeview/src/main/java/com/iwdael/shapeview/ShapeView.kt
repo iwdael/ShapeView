@@ -26,15 +26,77 @@ class ShapeView(cxt: Context, attrs: AttributeSet?, def: Int) : View(cxt, attrs,
                 R.styleable.ShapeView_defaultBackgroundColor,
                 Color.TRANSPARENT
             ),
+            pressedBackgroundColor = ta.getColor(
+                R.styleable.ShapeView_pressedBackgroundColor,
+                Color.TRANSPARENT
+            ),
+            selectedBackgroundColor = ta.getColor(
+                R.styleable.ShapeView_selectedBackgroundColor,
+                Color.TRANSPARENT
+            ),
+            focusedBackgroundColor = ta.getColor(
+                R.styleable.ShapeView_focusedBackgroundColor,
+                Color.TRANSPARENT
+            ),
+            checkedBackgroundColor = ta.getColor(
+                R.styleable.ShapeView_checkedBackgroundColor,
+                Color.TRANSPARENT
+            ),
+            touchedBackgroundColor = ta.getColor(
+                R.styleable.ShapeView_touchedBackgroundColor,
+                Color.TRANSPARENT
+            ),
             borderWidth = ta.getDimension(R.styleable.ShapeView_borderWidth, 0f),
             defaultBorderColor = ta.getColor(
                 R.styleable.ShapeView_defaultBorderColor,
                 Color.TRANSPARENT
             ),
+            pressedBorderColor = ta.getColor(
+                R.styleable.ShapeView_pressedBorderColor,
+                Color.TRANSPARENT
+            ),
+            selectedBorderColor = ta.getColor(
+                R.styleable.ShapeView_selectedBorderColor,
+                Color.TRANSPARENT
+            ),
+            focusedBorderColor = ta.getColor(
+                R.styleable.ShapeView_focusedBorderColor,
+                Color.TRANSPARENT
+            ),
+            checkedBorderColor = ta.getColor(
+                R.styleable.ShapeView_checkedBorderColor,
+                Color.TRANSPARENT
+            ),
+            touchedBorderColor = ta.getColor(
+                R.styleable.ShapeView_touchedBorderColor,
+                Color.TRANSPARENT
+            ),
+
             defaultShadowColor = ta.getColor(
                 R.styleable.ShapeView_defaultShadowColor,
                 Color.TRANSPARENT
             ),
+            pressedShadowColor = ta.getColor(
+                R.styleable.ShapeView_pressedShadowColor,
+                Color.TRANSPARENT
+            ),
+            selectedShadowColor = ta.getColor(
+                R.styleable.ShapeView_selectedShadowColor,
+                Color.TRANSPARENT
+            ),
+            focusedShadowColor = ta.getColor(
+                R.styleable.ShapeView_focusedShadowColor,
+                Color.TRANSPARENT
+            ),
+            checkedShadowColor = ta.getColor(
+                R.styleable.ShapeView_checkedShadowColor,
+                Color.TRANSPARENT
+            ),
+            touchedShadowColor = ta.getColor(
+                R.styleable.ShapeView_touchedShadowColor,
+                Color.TRANSPARENT
+            ),
+
             shadow = ta.getDimension(R.styleable.ShapeView_shadow, 1f),
             shadowRadius = ta.getFloat(R.styleable.ShapeView_shadowRadius, 0.5f),
             leftShadow = ta.getDimension(R.styleable.ShapeView_lShadow, -1f),
@@ -62,13 +124,74 @@ class ShapeView(cxt: Context, attrs: AttributeSet?, def: Int) : View(cxt, attrs,
                 R.styleable.ShapeView_defaultProgressStrokeColor,
                 Color.TRANSPARENT
             ),
+            pressedProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeView_pressedProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+            selectedProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeView_selectedProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+            focusedProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeView_focusedProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+            checkedProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeView_checkedProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+            touchedProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeView_touchedProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+
             progressStrokeWidth = ta.getDimension(R.styleable.ShapeView_progressStrokeWidth, 0f),
             defaultProgressReachColor = ta.getColor(
                 R.styleable.ShapeView_defaultProgressReachColor,
                 Color.TRANSPARENT
             ),
+            pressedProgressReachColor = ta.getColor(
+                R.styleable.ShapeView_pressedProgressReachColor,
+                Color.TRANSPARENT
+            ),
+            selectedProgressReachColor = ta.getColor(
+                R.styleable.ShapeView_selectedProgressReachColor,
+                Color.TRANSPARENT
+            ),
+            focusedProgressReachColor = ta.getColor(
+                R.styleable.ShapeView_focusedProgressReachColor,
+                Color.TRANSPARENT
+            ),
+            checkedProgressReachColor = ta.getColor(
+                R.styleable.ShapeView_checkedProgressReachColor,
+                Color.TRANSPARENT
+            ),
+            touchedProgressReachColor = ta.getColor(
+                R.styleable.ShapeView_touchedProgressReachColor,
+                Color.TRANSPARENT
+            ),
             defaultProgressUnReachColor = ta.getColor(
                 R.styleable.ShapeView_defaultProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
+            pressedProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeView_pressedProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
+            selectedProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeView_selectedProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
+            focusedProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeView_focusedProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
+            checkedProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeView_checkedProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
+            touchedProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeView_touchedProgressUnReachColor,
                 Color.TRANSPARENT
             ),
             progressSolidWidth = ta.getDimension(R.styleable.ShapeView_progressSolidWidth, 0f),
@@ -90,6 +213,7 @@ class ShapeView(cxt: Context, attrs: AttributeSet?, def: Int) : View(cxt, attrs,
         }
     }
 
+
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         rect.sizeChange(w, h)
         super.onSizeChanged(w, h, oldw, oldh)
@@ -99,4 +223,17 @@ class ShapeView(cxt: Context, attrs: AttributeSet?, def: Int) : View(cxt, attrs,
         rect.draw(canvas)
         super.onDraw(canvas)
     }
+
+    override fun setSelected(selected: Boolean) {
+        super.setSelected(selected)
+        rect.attr.refreshStateColor(State.SELECTED, selected)
+        invalidate()
+    }
+
+    override fun setPressed(pressed: Boolean) {
+        super.setPressed(pressed)
+        rect.attr.refreshStateColor(State.PRESSED, pressed)
+        invalidate()
+    }
+
 }

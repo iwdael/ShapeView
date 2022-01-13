@@ -5,7 +5,9 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.util.AttributeSet
 import android.view.MotionEvent
+import android.view.View
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 
 /**
  * author : Iwdael
@@ -16,6 +18,7 @@ import android.widget.LinearLayout
 class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLayout(cxt, attrs, def) {
     constructor(context: Context) : this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
+
     private val rect: ShapeLayer
 
     init {
@@ -25,15 +28,77 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
                 R.styleable.ShapeLinearLayout_defaultBackgroundColor,
                 Color.TRANSPARENT
             ),
+            pressedBackgroundColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_pressedBackgroundColor,
+                Color.TRANSPARENT
+            ),
+            selectedBackgroundColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_selectedBackgroundColor,
+                Color.TRANSPARENT
+            ),
+            focusedBackgroundColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_focusedBackgroundColor,
+                Color.TRANSPARENT
+            ),
+            checkedBackgroundColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_checkedBackgroundColor,
+                Color.TRANSPARENT
+            ),
+            touchedBackgroundColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_touchedBackgroundColor,
+                Color.TRANSPARENT
+            ),
             borderWidth = ta.getDimension(R.styleable.ShapeLinearLayout_borderWidth, 0f),
             defaultBorderColor = ta.getColor(
                 R.styleable.ShapeLinearLayout_defaultBorderColor,
                 Color.TRANSPARENT
             ),
+            pressedBorderColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_pressedBorderColor,
+                Color.TRANSPARENT
+            ),
+            selectedBorderColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_selectedBorderColor,
+                Color.TRANSPARENT
+            ),
+            focusedBorderColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_focusedBorderColor,
+                Color.TRANSPARENT
+            ),
+            checkedBorderColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_checkedBorderColor,
+                Color.TRANSPARENT
+            ),
+            touchedBorderColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_touchedBorderColor,
+                Color.TRANSPARENT
+            ),
+
             defaultShadowColor = ta.getColor(
                 R.styleable.ShapeLinearLayout_defaultShadowColor,
                 Color.TRANSPARENT
             ),
+            pressedShadowColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_pressedShadowColor,
+                Color.TRANSPARENT
+            ),
+            selectedShadowColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_selectedShadowColor,
+                Color.TRANSPARENT
+            ),
+            focusedShadowColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_focusedShadowColor,
+                Color.TRANSPARENT
+            ),
+            checkedShadowColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_checkedShadowColor,
+                Color.TRANSPARENT
+            ),
+            touchedShadowColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_touchedShadowColor,
+                Color.TRANSPARENT
+            ),
+
             shadow = ta.getDimension(R.styleable.ShapeLinearLayout_shadow, 1f),
             shadowRadius = ta.getFloat(R.styleable.ShapeLinearLayout_shadowRadius, 0.5f),
             leftShadow = ta.getDimension(R.styleable.ShapeLinearLayout_lShadow, -1f),
@@ -57,18 +122,89 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
             rtRadius = ta.getDimension(R.styleable.ShapeLinearLayout_rtRadius, -1f),
             rbRadius = ta.getDimension(R.styleable.ShapeLinearLayout_rbRadius, -1f),
             progressStyle = ta.getInt(R.styleable.ShapeLinearLayout_progressStyle, 0).toProgressStyle(),
-            defaultProgressStrokeColor = ta.getColor(R.styleable.ShapeLinearLayout_defaultProgressStrokeColor, Color.TRANSPARENT),
-            progressStrokeWidth= ta.getDimension(R.styleable.ShapeLinearLayout_progressStrokeWidth,0f),
-            defaultProgressReachColor = ta.getColor(R.styleable.ShapeLinearLayout_defaultProgressReachColor, Color.TRANSPARENT),
-            defaultProgressUnReachColor = ta.getColor(R.styleable.ShapeLinearLayout_defaultProgressUnReachColor, Color.TRANSPARENT),
+            defaultProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_defaultProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+            pressedProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_pressedProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+            selectedProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_selectedProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+            focusedProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_focusedProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+            checkedProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_checkedProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+            touchedProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_touchedProgressStrokeColor,
+                Color.TRANSPARENT
+            ),
+
+            progressStrokeWidth = ta.getDimension(R.styleable.ShapeLinearLayout_progressStrokeWidth, 0f),
+            defaultProgressReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_defaultProgressReachColor,
+                Color.TRANSPARENT
+            ),
+            pressedProgressReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_pressedProgressReachColor,
+                Color.TRANSPARENT
+            ),
+            selectedProgressReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_selectedProgressReachColor,
+                Color.TRANSPARENT
+            ),
+            focusedProgressReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_focusedProgressReachColor,
+                Color.TRANSPARENT
+            ),
+            checkedProgressReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_checkedProgressReachColor,
+                Color.TRANSPARENT
+            ),
+            touchedProgressReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_touchedProgressReachColor,
+                Color.TRANSPARENT
+            ),
+            defaultProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_defaultProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
+            pressedProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_pressedProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
+            selectedProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_selectedProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
+            focusedProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_focusedProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
+            checkedProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_checkedProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
+            touchedProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_touchedProgressUnReachColor,
+                Color.TRANSPARENT
+            ),
             progressSolidWidth = ta.getDimension(R.styleable.ShapeLinearLayout_progressSolidWidth, 0f),
-            progress = ta.getFloat(R.styleable.ShapeLinearLayout_progress , 0f),
+            progress = ta.getFloat(R.styleable.ShapeLinearLayout_progress, 0f),
             progressMax = ta.getFloat(R.styleable.ShapeLinearLayout_progressMax, 0f),
             enableDragProgress = ta.getBoolean(R.styleable.ShapeLinearLayout_enableDragProgress, false),
-            )
+        )
         ta.recycle()
         rect = ShapeLayer(this, attr)
     }
+
     override fun onTouchEvent(event: MotionEvent): Boolean {
         return if (rect.attr.validProgress() && rect.attr.enableDragProgress) {
             rect.onTouchEvent(event)
@@ -78,6 +214,8 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
             super.onTouchEvent(event)
         }
     }
+
+
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         rect.sizeChange(w, h)
         super.onSizeChanged(w, h, oldw, oldh)
@@ -87,4 +225,17 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
         rect.draw(canvas)
         super.onDraw(canvas)
     }
+
+    override fun setSelected(selected: Boolean) {
+        super.setSelected(selected)
+        rect.attr.refreshStateColor(State.SELECTED, selected)
+        invalidate()
+    }
+
+    override fun setPressed(pressed: Boolean) {
+        super.setPressed(pressed)
+        rect.attr.refreshStateColor(State.PRESSED, pressed)
+        invalidate()
+    }
+
 }

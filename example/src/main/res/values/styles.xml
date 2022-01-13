@@ -23,6 +23,7 @@
         <item name="progress">1</item>
         <item name="progressMax">100</item>
         <item name="defaultProgressReachColor">#8BC34A</item>
+        <item name="touchedProgressReachColor">#FF5722</item>
         <item name="defaultProgressUnReachColor">#758BC34A</item>
         <item name="progressSolidWidth">5dp</item>
         <item name="defaultProgressStrokeColor">#FFEB3B</item>

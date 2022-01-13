@@ -152,10 +152,10 @@ class OvalPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
             contentRectF.right,
             contentRectF.centerY(),
             intArrayOf(
-                attr.defaultProgressReachColor,
-                attr.defaultProgressReachColor,
-                attr.defaultProgressUnReachColor,
-                attr.defaultProgressUnReachColor
+                attr.progressReachColor(),
+                attr.progressReachColor(),
+                attr.progressUnReachColor(),
+                attr.progressUnReachColor()
             ),
             floatArrayOf(
                 0f,
@@ -178,10 +178,10 @@ class OvalPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
             contentRectF.centerX(),
             contentRectF.centerY(),
             intArrayOf(
-                attr.defaultProgressReachColor,
-                attr.defaultProgressReachColor,
-                attr.defaultProgressUnReachColor,
-                attr.defaultProgressUnReachColor
+                attr.progressReachColor(),
+                attr.progressReachColor(),
+                attr.progressUnReachColor(),
+                attr.progressUnReachColor()
             ),
             floatArrayOf(0f, attr.progress / attr.progressMax, attr.progress / attr.progressMax, 1f)
         )
@@ -200,12 +200,12 @@ class OvalPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
 
         solidPath.reset()
         solidMeasure.getSegment(0f, solidMeasure.length, solidPath, true)
-        pmProgress[1].paint.color = attr.defaultProgressUnReachColor
+        pmProgress[1].paint.color = attr.progressUnReachColor()
         canvas.drawPath(solidPath, pmProgress[1].paint)
 
         solidPath.reset()
         solidMeasure.getSegment(0f, solidLength, solidPath, true)
-        pmProgress[1].paint.color = attr.defaultProgressReachColor
+        pmProgress[1].paint.color = attr.progressReachColor()
         canvas.drawPath(solidPath, pmProgress[1].paint)
 
 
@@ -223,6 +223,11 @@ class OvalPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
     }
 
     override fun onTouchEvent(event: MotionEvent, view: View) {
+        if (event.action == MotionEvent.ACTION_DOWN) {
+            attr.refreshStateColor(State.TOUCHED, true)
+        } else if (event.action == MotionEvent.ACTION_UP || event.action == MotionEvent.ACTION_CANCEL) {
+            attr.refreshStateColor(State.TOUCHED, false)
+        }
         when (attr.progressStyle) {
             ProgressStyle.LINE -> onTouchEventLine(event, view)
             ProgressStyle.SECTOR -> onTouchEventSector(event, view)

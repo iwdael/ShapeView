@@ -73,7 +73,7 @@ class RoundPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
         val pos = floatArrayOf(0f, 0f)
         pmProgress[1].measure.getPosTan(0.01f, pos, null)
         startAngle = getAngle(pos[0] - contentRectF.centerX(), pos[1] - contentRectF.centerY())
-     }
+    }
 
     private fun makeProgressLine() {
         val outRectF = contentRectF.contentShrink(attr.progressStrokeWidth / 2f)
@@ -140,10 +140,10 @@ class RoundPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
             contentRectF.right,
             contentRectF.centerY(),
             intArrayOf(
-                attr.defaultProgressReachColor,
-                attr.defaultProgressReachColor,
-                attr.defaultProgressUnReachColor,
-                attr.defaultProgressUnReachColor
+                attr.progressReachColor(),
+                attr.progressReachColor(),
+                attr.progressUnReachColor(),
+                attr.progressUnReachColor()
             ),
             floatArrayOf(
                 0f,
@@ -164,10 +164,10 @@ class RoundPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
             contentRectF.centerX(),
             contentRectF.centerY(),
             intArrayOf(
-                attr.defaultProgressReachColor,
-                attr.defaultProgressReachColor,
-                attr.defaultProgressUnReachColor,
-                attr.defaultProgressUnReachColor
+                attr.progressReachColor(),
+                attr.progressReachColor(),
+                attr.progressUnReachColor(),
+                attr.progressUnReachColor()
             ),
             floatArrayOf(0f, attr.progress / attr.progressMax, attr.progress / attr.progressMax, 1f)
         )
@@ -186,12 +186,12 @@ class RoundPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
 
         solidPath.reset()
         solidMeasure.getSegment(0f, solidMeasure.length, solidPath, true)
-        pmProgress[1].paint.color = attr.defaultProgressUnReachColor
+        pmProgress[1].paint.color = attr.progressUnReachColor()
         canvas.drawPath(solidPath, pmProgress[1].paint)
 
         solidPath.reset()
         solidMeasure.getSegment(0f, solidLength, solidPath, true)
-        pmProgress[1].paint.color = attr.defaultProgressReachColor
+        pmProgress[1].paint.color = attr.progressReachColor()
         canvas.drawPath(solidPath, pmProgress[1].paint)
 
 
@@ -209,6 +209,11 @@ class RoundPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
     }
 
     override fun onTouchEvent(event: MotionEvent, view: View) {
+        if (event.action == MotionEvent.ACTION_DOWN) {
+            attr.refreshStateColor(State.TOUCHED, true)
+        } else if (event.action == MotionEvent.ACTION_UP || event.action == MotionEvent.ACTION_CANCEL) {
+            attr.refreshStateColor(State.TOUCHED, false)
+        }
         when (attr.progressStyle) {
             ProgressStyle.LINE -> onTouchEventLine(event, view)
             ProgressStyle.SECTOR -> onTouchEventSector(event, view)
@@ -229,7 +234,7 @@ class RoundPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
         val offsetY = event.y - contentRectF.centerY()
         attr.progress =
             (((getAngle(offsetX, offsetY) + 270f) % 360f) / 360f) * attr.progressMax
-         view.invalidate()
+        view.invalidate()
     }
 
     private fun onTouchEventLine(event: MotionEvent, view: View) {
