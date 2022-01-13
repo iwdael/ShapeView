@@ -98,12 +98,12 @@ class ShapeRelativeLayout(cxt: Context, attrs: AttributeSet?, def: Int) : Relati
                 Color.TRANSPARENT
             ),
 
-            shadow = ta.getDimension(R.styleable.ShapeRelativeLayout_shadow, 1f),
+            shadowPadding = ta.getDimension(R.styleable.ShapeRelativeLayout_shadowPadding, 1f),
             shadowRadius = ta.getFloat(R.styleable.ShapeRelativeLayout_shadowRadius, 0.5f),
-            leftShadow = ta.getDimension(R.styleable.ShapeRelativeLayout_lShadow, -1f),
-            topShadow = ta.getDimension(R.styleable.ShapeRelativeLayout_tShadow, -1f),
-            rightShadow = ta.getDimension(R.styleable.ShapeRelativeLayout_rShadow, -1f),
-            bottomShadow = ta.getDimension(R.styleable.ShapeRelativeLayout_bShadow, -1f),
+            leftShadowPadding = ta.getDimension(R.styleable.ShapeRelativeLayout_leftShadowPadding, -1f),
+            topShadowPadding = ta.getDimension(R.styleable.ShapeRelativeLayout_topShadowPadding, -1f),
+            rightShadowPadding = ta.getDimension(R.styleable.ShapeRelativeLayout_rightShadowPadding, -1f),
+            bottomShadowPadding = ta.getDimension(R.styleable.ShapeRelativeLayout_bottomShadowPadding, -1f),
             shadowDx = ta.getDimension(R.styleable.ShapeRelativeLayout_shadowDx, 0f),
             shadowDy = ta.getDimension(R.styleable.ShapeRelativeLayout_shadowDy, 0f),
             radius = try {

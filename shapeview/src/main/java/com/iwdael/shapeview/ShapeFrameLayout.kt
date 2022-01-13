@@ -99,12 +99,12 @@ class ShapeFrameLayout(cxt: Context, attrs: AttributeSet?, def: Int) : FrameLayo
                 Color.TRANSPARENT
             ),
 
-            shadow = ta.getDimension(R.styleable.ShapeFrameLayout_shadow, 1f),
+            shadowPadding = ta.getDimension(R.styleable.ShapeFrameLayout_shadowPadding, 1f),
             shadowRadius = ta.getFloat(R.styleable.ShapeFrameLayout_shadowRadius, 0.5f),
-            leftShadow = ta.getDimension(R.styleable.ShapeFrameLayout_lShadow, -1f),
-            topShadow = ta.getDimension(R.styleable.ShapeFrameLayout_tShadow, -1f),
-            rightShadow = ta.getDimension(R.styleable.ShapeFrameLayout_rShadow, -1f),
-            bottomShadow = ta.getDimension(R.styleable.ShapeFrameLayout_bShadow, -1f),
+            leftShadowPadding = ta.getDimension(R.styleable.ShapeFrameLayout_leftShadowPadding, -1f),
+            topShadowPadding = ta.getDimension(R.styleable.ShapeFrameLayout_topShadowPadding, -1f),
+            rightShadowPadding = ta.getDimension(R.styleable.ShapeFrameLayout_rightShadowPadding, -1f),
+            bottomShadowPadding = ta.getDimension(R.styleable.ShapeFrameLayout_bottomShadowPadding, -1f),
             shadowDx = ta.getDimension(R.styleable.ShapeFrameLayout_shadowDx, 0f),
             shadowDy = ta.getDimension(R.styleable.ShapeFrameLayout_shadowDy, 0f),
             radius = try {

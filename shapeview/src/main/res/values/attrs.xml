@@ -24,11 +24,11 @@
     <attr name="touchedShadowColor" format="color" />
 
     <attr name="shadowRadius" format="float" />
-    <attr name="shadow" format="dimension" />
-    <attr name="lShadow" format="dimension" />
-    <attr name="tShadow" format="dimension" />
-    <attr name="rShadow" format="dimension" />
-    <attr name="bShadow" format="dimension" />
+    <attr name="shadowPadding" format="dimension" />
+    <attr name="leftShadowPadding" format="dimension" />
+    <attr name="topShadowPadding" format="dimension" />
+    <attr name="rightShadowPadding" format="dimension" />
+    <attr name="bottomShadowPadding" format="dimension" />
     <attr name="shadowDx" format="dimension" />
     <attr name="shadowDy" format="dimension" />
     <attr name="radius" format="dimension|enum">
@@ -92,12 +92,12 @@
         <attr name="focusedShadowColor" />
         <attr name="checkedShadowColor" />
         <attr name="touchedShadowColor" />
-        <attr name="shadow" />
+        <attr name="shadowPadding" />
         <attr name="shadowRadius" />
-        <attr name="lShadow" />
-        <attr name="tShadow" />
-        <attr name="rShadow" />
-        <attr name="bShadow" />
+        <attr name="leftShadowPadding" />
+        <attr name="topShadowPadding" />
+        <attr name="rightShadowPadding" />
+        <attr name="bottomShadowPadding" />
         <attr name="shadowDx" />
         <attr name="shadowDy" />
         <attr name="radius" />
@@ -152,12 +152,12 @@
         <attr name="focusedShadowColor" />
         <attr name="checkedShadowColor" />
         <attr name="touchedShadowColor" />
-        <attr name="shadow" />
+        <attr name="shadowPadding" />
         <attr name="shadowRadius" />
-        <attr name="lShadow" />
-        <attr name="tShadow" />
-        <attr name="rShadow" />
-        <attr name="bShadow" />
+        <attr name="leftShadowPadding" />
+        <attr name="topShadowPadding" />
+        <attr name="rightShadowPadding" />
+        <attr name="bottomShadowPadding" />
         <attr name="shadowDx" />
         <attr name="shadowDy" />
         <attr name="radius" />
@@ -212,12 +212,12 @@
         <attr name="focusedShadowColor" />
         <attr name="checkedShadowColor" />
         <attr name="touchedShadowColor" />
-        <attr name="shadow" />
+        <attr name="shadowPadding" />
         <attr name="shadowRadius" />
-        <attr name="lShadow" />
-        <attr name="tShadow" />
-        <attr name="rShadow" />
-        <attr name="bShadow" />
+        <attr name="leftShadowPadding" />
+        <attr name="topShadowPadding" />
+        <attr name="rightShadowPadding" />
+        <attr name="bottomShadowPadding" />
         <attr name="shadowDx" />
         <attr name="shadowDy" />
         <attr name="radius" />
@@ -272,12 +272,12 @@
         <attr name="focusedShadowColor" />
         <attr name="checkedShadowColor" />
         <attr name="touchedShadowColor" />
-        <attr name="shadow" />
+        <attr name="shadowPadding" />
         <attr name="shadowRadius" />
-        <attr name="lShadow" />
-        <attr name="tShadow" />
-        <attr name="rShadow" />
-        <attr name="bShadow" />
+        <attr name="leftShadowPadding" />
+        <attr name="topShadowPadding" />
+        <attr name="rightShadowPadding" />
+        <attr name="bottomShadowPadding" />
         <attr name="shadowDx" />
         <attr name="shadowDy" />
         <attr name="radius" />
@@ -332,12 +332,12 @@
         <attr name="focusedShadowColor" />
         <attr name="checkedShadowColor" />
         <attr name="touchedShadowColor" />
-        <attr name="shadow" />
+        <attr name="shadowPadding" />
         <attr name="shadowRadius" />
-        <attr name="lShadow" />
-        <attr name="tShadow" />
-        <attr name="rShadow" />
-        <attr name="bShadow" />
+        <attr name="leftShadowPadding" />
+        <attr name="topShadowPadding" />
+        <attr name="rightShadowPadding" />
+        <attr name="bottomShadowPadding" />
         <attr name="shadowDx" />
         <attr name="shadowDy" />
         <attr name="radius" />

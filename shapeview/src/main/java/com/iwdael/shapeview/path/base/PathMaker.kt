@@ -26,10 +26,10 @@ abstract class PathMaker(
     fun reset(width: Int, height: Int) {
         sizeRectF.set(0f, 0f, width.toFloat(), height.toFloat())
         contentRectF.set(
-            attr.leftShadow(),
-            attr.topShadow(),
-            width.toFloat() - attr.rightShadow(),
-            height.toFloat() - attr.bottomShadow()
+            attr.leftShadowPadding(),
+            attr.topShadowPadding(),
+            width.toFloat() - attr.rightShadowPadding(),
+            height.toFloat() - attr.bottomShadowPadding()
         )
     }
 

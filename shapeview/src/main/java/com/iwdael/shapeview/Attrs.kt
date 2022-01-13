@@ -32,12 +32,12 @@ class Attrs(
     private val focusedShadowColor: Int,
     private val checkedShadowColor: Int,
     private val touchedShadowColor: Int,
-    private val shadow: Float,
+    private val shadowPadding: Float,
     private val shadowRadius: Float,
-    private val leftShadow: Float,
-    private val rightShadow: Float,
-    private val topShadow: Float,
-    private val bottomShadow: Float,
+    private val leftShadowPadding: Float,
+    private val rightShadowPadding: Float,
+    private val topShadowPadding: Float,
+    private val bottomShadowPadding: Float,
     private val shadowDx: Float,
     private val shadowDy: Float,
     private val radius: Float,
@@ -172,10 +172,10 @@ class Attrs(
     fun rbRadius() = if (rbRadius != -1f) rbRadius else radius
 
 
-    fun leftShadow() = if (leftShadow != -1f) leftShadow else shadow
-    fun rightShadow() = if (rightShadow != -1f) rightShadow else shadow
-    fun topShadow() = if (topShadow != -1f) topShadow else shadow
-    fun bottomShadow() = if (bottomShadow != -1f) bottomShadow else shadow
+    fun leftShadowPadding() = if (leftShadowPadding != -1f) leftShadowPadding else shadowPadding
+    fun rightShadowPadding() = if (rightShadowPadding != -1f) rightShadowPadding else shadowPadding
+    fun topShadowPadding() = if (topShadowPadding != -1f) topShadowPadding else shadowPadding
+    fun bottomShadowPadding() = if (bottomShadowPadding != -1f) bottomShadowPadding else shadowPadding
 
 
     fun renderRectPaint(view: View, pms: Pms) {
@@ -186,10 +186,10 @@ class Attrs(
             paint.setShadowLayer(
                 max(
                     max(
-                        max(leftShadow(), topShadow()),
-                        rightShadow()
+                        max(leftShadowPadding(), topShadowPadding()),
+                        rightShadowPadding()
                     ),
-                    bottomShadow()
+                    bottomShadowPadding()
                 ) * shadowRadius,
                 shadowDx,
                 shadowDy,

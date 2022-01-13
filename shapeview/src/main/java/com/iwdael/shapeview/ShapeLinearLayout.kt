@@ -99,12 +99,12 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
                 Color.TRANSPARENT
             ),
 
-            shadow = ta.getDimension(R.styleable.ShapeLinearLayout_shadow, 1f),
+            shadowPadding = ta.getDimension(R.styleable.ShapeLinearLayout_shadowPadding, 1f),
             shadowRadius = ta.getFloat(R.styleable.ShapeLinearLayout_shadowRadius, 0.5f),
-            leftShadow = ta.getDimension(R.styleable.ShapeLinearLayout_lShadow, -1f),
-            topShadow = ta.getDimension(R.styleable.ShapeLinearLayout_tShadow, -1f),
-            rightShadow = ta.getDimension(R.styleable.ShapeLinearLayout_rShadow, -1f),
-            bottomShadow = ta.getDimension(R.styleable.ShapeLinearLayout_bShadow, -1f),
+            leftShadowPadding = ta.getDimension(R.styleable.ShapeLinearLayout_leftShadowPadding, -1f),
+            topShadowPadding = ta.getDimension(R.styleable.ShapeLinearLayout_topShadowPadding, -1f),
+            rightShadowPadding = ta.getDimension(R.styleable.ShapeLinearLayout_rightShadowPadding, -1f),
+            bottomShadowPadding = ta.getDimension(R.styleable.ShapeLinearLayout_bottomShadowPadding, -1f),
             shadowDx = ta.getDimension(R.styleable.ShapeLinearLayout_shadowDx, 0f),
             shadowDy = ta.getDimension(R.styleable.ShapeLinearLayout_shadowDy, 0f),
             radius = try {
