@@ -13,7 +13,7 @@ import kotlin.math.max
  */
 
 /**
- *<attr name="background" format="color" />
+ *<attr name="defaultBackgroundColor" format="color" />
 <attr name="borderWidth" format="dimension" />
 <attr name="borderColor" format="color" />
 <attr name="shadowColor" format="color" />
@@ -26,7 +26,7 @@ import kotlin.math.max
 <attr name="rbRadius" format="dimension" />
  */
 class Attrs(
-    private val background: Int,
+    private val defaultBackgroundColor: Int,
     val borderWidth: Float,
     private val borderColor: Int,
     private val shadowColor: Int,
@@ -66,8 +66,9 @@ class Attrs(
     fun bottomShadow() = if (bottomShadow != -1f) bottomShadow else shadow
 
 
-    fun renderRectPaint(view: View, paint: Paint) {
+    fun renderRectPaint(view: View, pms: Pms) {
         if (!validRect()) return
+        val paint = pms[0].paint
         paint.isAntiAlias = true
         if (shadowColor != Color.TRANSPARENT) {
             paint.setShadowLayer(
@@ -85,29 +86,65 @@ class Attrs(
         }
         paint.isAntiAlias = true
         paint.style = Paint.Style.FILL
-        paint.color = background
+        paint.color = defaultBackgroundColor
     }
 
-    fun renderBorderPaint(view: View, paint: Paint) {
+    fun renderBorderPaint(view: View, pms: Pms) {
         if (!validBorder()) return
+        val paint = pms[0].paint
         paint.strokeWidth = borderWidth
         paint.isAntiAlias = true
         paint.style = Paint.Style.STROKE
         paint.color = borderColor
     }
 
-    fun renderProgressPaint(view: View, paint: Paint) {
+    fun renderProgressPaint(view: View, pms: Pms) {
         if (!validProgress()) return
-        paint.isAntiAlias = true
+        pms[0].paint.isAntiAlias = true
+        pms[1].paint.isAntiAlias = true
+        pms[2].paint.isAntiAlias = true
         when (progressStyle) {
             ProgressStyle.BORDER -> {
-                paint.style = Paint.Style.STROKE
+                pms[0].paint.style = Paint.Style.STROKE
+                pms[0].paint.color = progressStrokeColor
+                pms[0].paint.strokeWidth = progressStrokeWidth
+
+                pms[1].paint.style = Paint.Style.STROKE
+                pms[1].paint.color = progressUnReachColor
+                pms[1].paint.strokeWidth = progressSolidWidth
+
+                pms[2].paint.style = Paint.Style.STROKE
+                pms[2].paint.color = progressStrokeColor
+                pms[2].paint.strokeWidth = progressStrokeWidth
+            }
+            ProgressStyle.LINE -> {
+                pms[0].paint.style = Paint.Style.STROKE
+                pms[0].paint.color = progressStrokeColor
+                pms[0].paint.strokeWidth = progressStrokeWidth
+
+                pms[1].paint.style = Paint.Style.FILL
+
+                pms[2].paint.style = Paint.Style.STROKE
+                pms[2].paint.color = progressStrokeColor
+                pms[2].paint.strokeWidth = progressStrokeWidth
+            }
+            ProgressStyle.SECTOR -> {
+                pms[0].paint.style = Paint.Style.STROKE
+                pms[0].paint.color = progressStrokeColor
+                pms[0].paint.strokeWidth = progressStrokeWidth
+
+                pms[1].paint.style = Paint.Style.FILL
+                pms[1].paint.strokeWidth = progressSolidWidth
+
+                pms[2].paint.style = Paint.Style.STROKE
+                pms[2].paint.color = progressStrokeColor
+                pms[2].paint.strokeWidth = progressStrokeWidth
             }
         }
     }
 
     fun validRect(): Boolean {
-        return background != Color.TRANSPARENT
+        return defaultBackgroundColor != Color.TRANSPARENT
     }
 
     fun validBorder(): Boolean {

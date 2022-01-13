@@ -11,37 +11,34 @@ import com.iwdael.shapeview.path.base.PathMaker
  * time   : 2019/8/5
  * version: 1.0
  */
-class ShapeLayer(private val view: View,   val attr: Attrs) {
+class ShapeLayer(private val view: View, val attr: Attrs) {
 
-    private val rectPaint = Paint()
-    private val borderPaint = Paint()
-    private val progressPaint = Paint()
 
-    private val rectPath = Path()
-    private val borderPath = Path()
-    private val progressPath = Pm(Path() to PathMeasure(), Path() to PathMeasure(), Path() to PathMeasure())
+    private val pmRect = Pms(1)
+    private val pmBorder = Pms(1)
+    private val pmProgress = Pms(3) //进度
 
-    private val pathMaker = PathMaker.obtainMaker(attr)
+    private val pathMaker = PathMaker.obtainMaker(attr, pmRect, pmBorder, pmProgress)
 
     init {
         view.setBackgroundColor(Color.TRANSPARENT)
-        attr.renderRectPaint(view, rectPaint)
-        attr.renderBorderPaint(view, borderPaint)
-        attr.renderProgressPaint(view, progressPaint)
+        attr.renderRectPaint(view, pmRect)
+        attr.renderBorderPaint(view, pmBorder)
+        attr.renderProgressPaint(view, pmProgress)
     }
 
 
     fun sizeChange(width: Int, height: Int) {
         pathMaker.reset(width, height)
-        pathMaker.makeRect(rectPath)
-        pathMaker.makeBorder(borderPath)
-        pathMaker.makeProgress(progressPath)
+        pathMaker.makeRect()
+        pathMaker.makeBorder()
+        pathMaker.makeProgress()
     }
 
     fun draw(canvas: Canvas) {
-        if (attr.validRect()) pathMaker.drawRect(canvas, rectPath, rectPaint)
-        if (attr.validBorder()) pathMaker.drawBorder(canvas, borderPath, borderPaint)
-        if (attr.validProgress()) pathMaker.drawProgress(canvas, progressPath, progressPaint)
+        if (attr.validRect()) pathMaker.drawRect(canvas)
+        if (attr.validBorder()) pathMaker.drawBorder(canvas)
+        if (attr.validProgress()) pathMaker.drawProgress(canvas)
     }
 
     fun onTouchEvent(event: MotionEvent) = pathMaker.onTouchEvent(event, view)

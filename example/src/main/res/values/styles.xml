@@ -1,15 +1,88 @@
 <resources>
-    <!-- Base application theme. -->
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="shape">
+    <style name="layout_horizontal">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="shape_round">
         <item name="radius">round</item>
-        <item name="shadow">10dp</item>
+        <item name="shadow">5dp</item>
         <item name="shadowColor">#A8A8A8</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="progress">1</item>
+        <item name="progressMax">100</item>
+        <item name="progressReachColor">#8BC34A</item>
+        <item name="progressUnReachColor">#758BC34A</item>
+        <item name="progressSolidWidth">5dp</item>
+        <item name="progressStrokeColor">#FFEB3B</item>
+        <item name="progressStrokeWidth">1dp</item>
+        <item name="borderWidth">5dp</item>
+        <item name="enableDragProgress">true</item>
+    </style>
+
+    <style name="shape_oval">
+        <item name="radius">oval</item>
+        <item name="shadow">5dp</item>
+        <item name="shadowColor">#A8A8A8</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="progress">88</item>
+        <item name="progressMax">100</item>
+        <item name="progressReachColor">#8BC34A</item>
+        <item name="progressUnReachColor">#758BC34A</item>
+        <item name="progressSolidWidth">5dp</item>
+        <item name="progressStrokeColor">#FFEB3B</item>
+        <item name="progressStrokeWidth">1dp</item>
+        <item name="borderWidth">5dp</item>
+        <item name="enableDragProgress">true</item>
+    </style>
+
+
+    <style name="shape_circle">
+        <item name="radius">circle</item>
+        <item name="shadow">5dp</item>
+        <item name="shadowColor">#A8A8A8</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="progress">88</item>
+        <item name="progressMax">100</item>
+        <item name="progressReachColor">#8BC34A</item>
+        <item name="progressUnReachColor">#758BC34A</item>
+        <item name="progressSolidWidth">5dp</item>
+        <item name="progressStrokeColor">#FFEB3B</item>
+        <item name="progressStrokeWidth">1dp</item>
+        <item name="borderWidth">5dp</item>
+        <item name="enableDragProgress">true</item>
+    </style>
+
+    <style name="shape_radius">
+        <item name="radius">10dp</item>
+        <item name="shadow">5dp</item>
+        <item name="shadowColor">#A8A8A8</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="progress">88</item>
+        <item name="progressMax">100</item>
+        <item name="progressReachColor">#8BC34A</item>
+        <item name="progressUnReachColor">#758BC34A</item>
+        <item name="progressSolidWidth">5dp</item>
+        <item name="progressStrokeColor">#FFEB3B</item>
+        <item name="progressStrokeWidth">1dp</item>
+        <item name="borderWidth">5dp</item>
+        <item name="enableDragProgress">true</item>
     </style>
 </resources>

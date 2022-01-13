@@ -23,8 +23,8 @@ class ShapeRelativeLayout(cxt: Context, attrs: AttributeSet?, def: Int) :
     init {
         val ta = context.obtainStyledAttributes(attrs, R.styleable.ShapeRelativeLayout)
         val attr = Attrs(
-            background = ta.getColor(
-                R.styleable.ShapeRelativeLayout_android_background,
+            defaultBackgroundColor = ta.getColor(
+                R.styleable.ShapeRelativeLayout_defaultBackgroundColor,
                 Color.TRANSPARENT
             ),
             borderWidth = ta.getDimension(R.styleable.ShapeRelativeLayout_borderWidth, 0f),

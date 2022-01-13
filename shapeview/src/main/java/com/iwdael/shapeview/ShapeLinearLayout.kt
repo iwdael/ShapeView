@@ -21,8 +21,8 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
     init {
         val ta = context.obtainStyledAttributes(attrs, R.styleable.ShapeLinearLayout)
         val attr = Attrs(
-            background = ta.getColor(
-                R.styleable.ShapeLinearLayout_android_background,
+            defaultBackgroundColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_defaultBackgroundColor,
                 Color.TRANSPARENT
             ),
             borderWidth = ta.getDimension(R.styleable.ShapeLinearLayout_borderWidth, 0f),

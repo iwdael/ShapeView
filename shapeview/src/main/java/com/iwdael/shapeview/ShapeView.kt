@@ -22,8 +22,8 @@ class ShapeView(cxt: Context, attrs: AttributeSet?, def: Int) : View(cxt, attrs,
     init {
         val ta = context.obtainStyledAttributes(attrs, R.styleable.ShapeView)
         val attr = Attrs(
-            background = ta.getColor(
-                R.styleable.ShapeView_android_background,
+            defaultBackgroundColor = ta.getColor(
+                R.styleable.ShapeView_defaultBackgroundColor,
                 Color.TRANSPARENT
             ),
             borderWidth = ta.getDimension(R.styleable.ShapeView_borderWidth, 0f),

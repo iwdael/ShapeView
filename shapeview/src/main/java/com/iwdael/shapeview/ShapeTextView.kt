@@ -21,8 +21,8 @@ class ShapeTextView(cxt: Context, attrs: AttributeSet?, def: Int) : AppCompatTex
     init {
         val ta = context.obtainStyledAttributes(attrs, R.styleable.ShapeTextView)
         val attr = Attrs(
-            background = ta.getColor(
-                R.styleable.ShapeTextView_android_background,
+            defaultBackgroundColor = ta.getColor(
+                R.styleable.ShapeTextView_defaultBackgroundColor,
                 Color.TRANSPARENT
             ),
             borderWidth = ta.getDimension(R.styleable.ShapeTextView_borderWidth, 0f),

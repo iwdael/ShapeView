@@ -23,8 +23,8 @@ class ShapeFrameLayout(cxt: Context, attrs: AttributeSet?, def: Int) :
     init {
         val ta = context.obtainStyledAttributes(attrs, R.styleable.ShapeFrameLayout)
         val attr = Attrs(
-            background = ta.getColor(
-                R.styleable.ShapeFrameLayout_android_background,
+            defaultBackgroundColor = ta.getColor(
+                R.styleable.ShapeFrameLayout_defaultBackgroundColor,
                 Color.TRANSPARENT
             ),
             borderWidth = ta.getDimension(R.styleable.ShapeFrameLayout_borderWidth, 0f),

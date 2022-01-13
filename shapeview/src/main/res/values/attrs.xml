@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="defaultBackgroundColor" format="color" />
+    <attr name="pressedBackgroundColor" format="color" />
+    <attr name="selectedBackgroundColor" format="color" />
+    <attr name="focusedBackgroundColor" format="color" />
+
     <attr name="borderWidth" format="dimension" />
     <attr name="borderColor" format="color" />
     <attr name="shadowColor" format="color" />
@@ -34,7 +39,7 @@
     <attr name="progressMax" format="float" />
     <attr name="enableDragProgress" format="boolean" />
     <declare-styleable name="ShapeView">
-        <attr name="android:background" />
+        <attr name="defaultBackgroundColor" />
         <attr name="borderWidth" />
         <attr name="borderColor" />
         <attr name="shadowColor" />
@@ -63,7 +68,7 @@
     </declare-styleable>
 
     <declare-styleable name="ShapeTextView">
-        <attr name="android:background" />
+        <attr name="defaultBackgroundColor" />
         <attr name="borderWidth" />
         <attr name="borderColor" />
         <attr name="shadowColor" />
@@ -92,7 +97,7 @@
     </declare-styleable>
 
     <declare-styleable name="ShapeRelativeLayout">
-        <attr name="android:background" />
+        <attr name="defaultBackgroundColor" />
         <attr name="borderWidth" />
         <attr name="borderColor" />
         <attr name="shadowColor" />
@@ -122,7 +127,7 @@
 
 
     <declare-styleable name="ShapeFrameLayout">
-        <attr name="android:background" />
+        <attr name="defaultBackgroundColor" />
         <attr name="borderWidth" />
         <attr name="borderColor" />
         <attr name="shadowColor" />
@@ -152,7 +157,7 @@
 
 
     <declare-styleable name="ShapeLinearLayout">
-        <attr name="android:background" />
+        <attr name="defaultBackgroundColor" />
         <attr name="borderWidth" />
         <attr name="borderColor" />
         <attr name="shadowColor" />

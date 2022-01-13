@@ -11,4 +11,8 @@ import android.graphics.PathMeasure
  * desc   : MVVM
  * version: 1.0
  */
-class Pm(val path: Path, val paint: Paint, val measure: PathMeasure)
+class Pms(size: Int) : ArrayList<Pm>() {
+    init {
+        for (index in 0 until size) add(Pm(Path(), Paint(), PathMeasure()))
+    }
+}
