@@ -12,24 +12,11 @@ import kotlin.math.max
  * version: 1.0
  */
 
-/**
- *<attr name="defaultBackgroundColor" format="color" />
-<attr name="borderWidth" format="dimension" />
-<attr name="borderColor" format="color" />
-<attr name="shadowColor" format="color" />
-<attr name="shadowDx" format="dimension" />
-<attr name="shadowDy" format="dimension" />
-<attr name="radius" format="dimension" />
-<attr name="ltRadius" format="dimension" />
-<attr name="lbRadius" format="dimension" />
-<attr name="rtRadius" format="dimension" />
-<attr name="rbRadius" format="dimension" />
- */
 class Attrs(
     private val defaultBackgroundColor: Int,
     val borderWidth: Float,
-    private val borderColor: Int,
-    private val shadowColor: Int,
+    private val defaultBorderColor: Int,
+    private val defaultShadowColor: Int,
     private val shadow: Float,
     private val shadowRadius: Float,
     private val leftShadow: Float,
@@ -45,10 +32,10 @@ class Attrs(
     private val rtRadius: Float,
     private val rbRadius: Float,
     val progressStyle: ProgressStyle,
-    val progressReachColor: Int,
-    val progressUnReachColor: Int,
+    val defaultProgressReachColor: Int,
+    val defaultProgressUnReachColor: Int,
     val progressStrokeWidth: Float,
-    val progressStrokeColor: Int,
+    val defaultProgressStrokeColor: Int,
     val progressSolidWidth: Float,
     var progress: Float,
     val progressMax: Float,
@@ -70,7 +57,7 @@ class Attrs(
         if (!validRect()) return
         val paint = pms[0].paint
         paint.isAntiAlias = true
-        if (shadowColor != Color.TRANSPARENT) {
+        if (defaultShadowColor != Color.TRANSPARENT) {
             paint.setShadowLayer(
                 max(
                     max(
@@ -81,7 +68,7 @@ class Attrs(
                 ) * shadowRadius,
                 shadowDx,
                 shadowDy,
-                shadowColor
+                defaultShadowColor
             )
         }
         paint.isAntiAlias = true
@@ -95,7 +82,7 @@ class Attrs(
         paint.strokeWidth = borderWidth
         paint.isAntiAlias = true
         paint.style = Paint.Style.STROKE
-        paint.color = borderColor
+        paint.color = defaultBorderColor
     }
 
     fun renderProgressPaint(view: View, pms: Pms) {
@@ -106,38 +93,38 @@ class Attrs(
         when (progressStyle) {
             ProgressStyle.BORDER -> {
                 pms[0].paint.style = Paint.Style.STROKE
-                pms[0].paint.color = progressStrokeColor
+                pms[0].paint.color = defaultProgressStrokeColor
                 pms[0].paint.strokeWidth = progressStrokeWidth
 
                 pms[1].paint.style = Paint.Style.STROKE
-                pms[1].paint.color = progressUnReachColor
+                pms[1].paint.color = defaultProgressUnReachColor
                 pms[1].paint.strokeWidth = progressSolidWidth
 
                 pms[2].paint.style = Paint.Style.STROKE
-                pms[2].paint.color = progressStrokeColor
+                pms[2].paint.color = defaultProgressStrokeColor
                 pms[2].paint.strokeWidth = progressStrokeWidth
             }
             ProgressStyle.LINE -> {
                 pms[0].paint.style = Paint.Style.STROKE
-                pms[0].paint.color = progressStrokeColor
+                pms[0].paint.color = defaultProgressStrokeColor
                 pms[0].paint.strokeWidth = progressStrokeWidth
 
                 pms[1].paint.style = Paint.Style.FILL
 
                 pms[2].paint.style = Paint.Style.STROKE
-                pms[2].paint.color = progressStrokeColor
+                pms[2].paint.color = defaultProgressStrokeColor
                 pms[2].paint.strokeWidth = progressStrokeWidth
             }
             ProgressStyle.SECTOR -> {
                 pms[0].paint.style = Paint.Style.STROKE
-                pms[0].paint.color = progressStrokeColor
+                pms[0].paint.color = defaultProgressStrokeColor
                 pms[0].paint.strokeWidth = progressStrokeWidth
 
                 pms[1].paint.style = Paint.Style.FILL
                 pms[1].paint.strokeWidth = progressSolidWidth
 
                 pms[2].paint.style = Paint.Style.STROKE
-                pms[2].paint.color = progressStrokeColor
+                pms[2].paint.color = defaultProgressStrokeColor
                 pms[2].paint.strokeWidth = progressStrokeWidth
             }
         }
@@ -148,7 +135,7 @@ class Attrs(
     }
 
     fun validBorder(): Boolean {
-        return borderColor != Color.TRANSPARENT && borderWidth > 0f
+        return defaultBorderColor != Color.TRANSPARENT && borderWidth > 0f
     }
 
     fun validProgress(): Boolean {

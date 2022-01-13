@@ -27,12 +27,12 @@ class ShapeView(cxt: Context, attrs: AttributeSet?, def: Int) : View(cxt, attrs,
                 Color.TRANSPARENT
             ),
             borderWidth = ta.getDimension(R.styleable.ShapeView_borderWidth, 0f),
-            borderColor = ta.getColor(
-                R.styleable.ShapeView_borderColor,
+            defaultBorderColor = ta.getColor(
+                R.styleable.ShapeView_defaultBorderColor,
                 Color.TRANSPARENT
             ),
-            shadowColor = ta.getColor(
-                R.styleable.ShapeView_shadowColor,
+            defaultShadowColor = ta.getColor(
+                R.styleable.ShapeView_defaultShadowColor,
                 Color.TRANSPARENT
             ),
             shadow = ta.getDimension(R.styleable.ShapeView_shadow, 1f),
@@ -58,17 +58,17 @@ class ShapeView(cxt: Context, attrs: AttributeSet?, def: Int) : View(cxt, attrs,
             rtRadius = ta.getDimension(R.styleable.ShapeView_rtRadius, -1f),
             rbRadius = ta.getDimension(R.styleable.ShapeView_rbRadius, -1f),
             progressStyle = ta.getInt(R.styleable.ShapeView_progressStyle, 0).toProgressStyle(),
-            progressStrokeColor = ta.getColor(
-                R.styleable.ShapeView_progressStrokeColor,
+            defaultProgressStrokeColor = ta.getColor(
+                R.styleable.ShapeView_defaultProgressStrokeColor,
                 Color.TRANSPARENT
             ),
             progressStrokeWidth = ta.getDimension(R.styleable.ShapeView_progressStrokeWidth, 0f),
-            progressReachColor = ta.getColor(
-                R.styleable.ShapeView_progressReachColor,
+            defaultProgressReachColor = ta.getColor(
+                R.styleable.ShapeView_defaultProgressReachColor,
                 Color.TRANSPARENT
             ),
-            progressUnReachColor = ta.getColor(
-                R.styleable.ShapeView_progressUnReachColor,
+            defaultProgressUnReachColor = ta.getColor(
+                R.styleable.ShapeView_defaultProgressUnReachColor,
                 Color.TRANSPARENT
             ),
             progressSolidWidth = ta.getDimension(R.styleable.ShapeView_progressSolidWidth, 0f),

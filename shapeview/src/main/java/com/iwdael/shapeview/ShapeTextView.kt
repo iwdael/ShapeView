@@ -26,12 +26,12 @@ class ShapeTextView(cxt: Context, attrs: AttributeSet?, def: Int) : AppCompatTex
                 Color.TRANSPARENT
             ),
             borderWidth = ta.getDimension(R.styleable.ShapeTextView_borderWidth, 0f),
-            borderColor = ta.getColor(
-                R.styleable.ShapeTextView_borderColor,
+            defaultBorderColor = ta.getColor(
+                R.styleable.ShapeTextView_defaultBorderColor,
                 Color.TRANSPARENT
             ),
-            shadowColor = ta.getColor(
-                R.styleable.ShapeTextView_shadowColor,
+            defaultShadowColor = ta.getColor(
+                R.styleable.ShapeTextView_defaultShadowColor,
                 Color.TRANSPARENT
             ),
             shadow = ta.getDimension(R.styleable.ShapeTextView_shadow, 1f),
@@ -57,10 +57,10 @@ class ShapeTextView(cxt: Context, attrs: AttributeSet?, def: Int) : AppCompatTex
             rtRadius = ta.getDimension(R.styleable.ShapeTextView_rtRadius, -1f),
             rbRadius = ta.getDimension(R.styleable.ShapeTextView_rbRadius, -1f),
             progressStyle = ta.getInt(R.styleable.ShapeTextView_progressStyle, 0).toProgressStyle(),
-            progressStrokeColor = ta.getColor(R.styleable.ShapeTextView_progressStrokeColor, Color.TRANSPARENT),
+            defaultProgressStrokeColor = ta.getColor(R.styleable.ShapeTextView_defaultProgressStrokeColor, Color.TRANSPARENT),
             progressStrokeWidth= ta.getDimension(R.styleable.ShapeTextView_progressStrokeWidth,0f),
-            progressReachColor = ta.getColor(R.styleable.ShapeTextView_progressReachColor, Color.TRANSPARENT),
-            progressUnReachColor = ta.getColor(R.styleable.ShapeTextView_progressUnReachColor, Color.TRANSPARENT),
+            defaultProgressReachColor = ta.getColor(R.styleable.ShapeTextView_defaultProgressReachColor, Color.TRANSPARENT),
+            defaultProgressUnReachColor = ta.getColor(R.styleable.ShapeTextView_defaultProgressUnReachColor, Color.TRANSPARENT),
             progressSolidWidth = ta.getDimension(R.styleable.ShapeTextView_progressSolidWidth, 0f),
             progress = ta.getFloat(R.styleable.ShapeTextView_progress , 0f),
             progressMax = ta.getFloat(R.styleable.ShapeTextView_progressMax, 0f),

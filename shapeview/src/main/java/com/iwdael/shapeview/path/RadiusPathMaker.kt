@@ -151,10 +151,10 @@ class RadiusPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) 
             contentRectF.right,
             contentRectF.centerY(),
             intArrayOf(
-                attr.progressReachColor,
-                attr.progressReachColor,
-                attr.progressUnReachColor,
-                attr.progressUnReachColor
+                attr.defaultProgressReachColor,
+                attr.defaultProgressReachColor,
+                attr.defaultProgressUnReachColor,
+                attr.defaultProgressUnReachColor
             ),
             floatArrayOf(
                 0f,
@@ -175,10 +175,10 @@ class RadiusPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) 
             contentRectF.centerX(),
             contentRectF.centerY(),
             intArrayOf(
-                attr.progressReachColor,
-                attr.progressReachColor,
-                attr.progressUnReachColor,
-                attr.progressUnReachColor
+                attr.defaultProgressReachColor,
+                attr.defaultProgressReachColor,
+                attr.defaultProgressUnReachColor,
+                attr.defaultProgressUnReachColor
             ),
             floatArrayOf(0f, attr.progress / attr.progressMax, attr.progress / attr.progressMax, 1f)
         )
@@ -198,12 +198,12 @@ class RadiusPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) 
 
         solidPath.reset()
         solidMeasure.getSegment(0f, solidMeasure.length, solidPath, true)
-        pmProgress[1].paint.color = attr.progressUnReachColor
+        pmProgress[1].paint.color = attr.defaultProgressUnReachColor
         canvas.drawPath(solidPath, pmProgress[1].paint)
 
         solidPath.reset()
         solidMeasure.getSegment(0f, solidLength, solidPath, true)
-        pmProgress[1].paint.color = attr.progressReachColor
+        pmProgress[1].paint.color = attr.defaultProgressReachColor
         canvas.drawPath(solidPath, pmProgress[1].paint)
 
 

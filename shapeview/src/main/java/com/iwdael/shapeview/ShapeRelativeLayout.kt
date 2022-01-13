@@ -28,12 +28,12 @@ class ShapeRelativeLayout(cxt: Context, attrs: AttributeSet?, def: Int) :
                 Color.TRANSPARENT
             ),
             borderWidth = ta.getDimension(R.styleable.ShapeRelativeLayout_borderWidth, 0f),
-            borderColor = ta.getColor(
-                R.styleable.ShapeRelativeLayout_borderColor,
+            defaultBorderColor = ta.getColor(
+                R.styleable.ShapeRelativeLayout_defaultBorderColor,
                 Color.TRANSPARENT
             ),
-            shadowColor = ta.getColor(
-                R.styleable.ShapeRelativeLayout_shadowColor,
+            defaultShadowColor = ta.getColor(
+                R.styleable.ShapeRelativeLayout_defaultShadowColor,
                 Color.TRANSPARENT
             ),
             shadow = ta.getDimension(R.styleable.ShapeRelativeLayout_shadow, 1f),
@@ -59,10 +59,10 @@ class ShapeRelativeLayout(cxt: Context, attrs: AttributeSet?, def: Int) :
             rtRadius = ta.getDimension(R.styleable.ShapeRelativeLayout_rtRadius, -1f),
             rbRadius = ta.getDimension(R.styleable.ShapeRelativeLayout_rbRadius, -1f),
             progressStyle = ta.getInt(R.styleable.ShapeRelativeLayout_progressStyle, 0).toProgressStyle(),
-            progressStrokeColor = ta.getColor(R.styleable.ShapeRelativeLayout_progressStrokeColor, Color.TRANSPARENT),
+            defaultProgressStrokeColor = ta.getColor(R.styleable.ShapeRelativeLayout_defaultProgressStrokeColor, Color.TRANSPARENT),
             progressStrokeWidth= ta.getDimension(R.styleable.ShapeRelativeLayout_progressStrokeWidth,0f),
-            progressReachColor = ta.getColor(R.styleable.ShapeRelativeLayout_progressReachColor, Color.TRANSPARENT),
-            progressUnReachColor = ta.getColor(R.styleable.ShapeRelativeLayout_progressUnReachColor, Color.TRANSPARENT),
+            defaultProgressReachColor = ta.getColor(R.styleable.ShapeRelativeLayout_defaultProgressReachColor, Color.TRANSPARENT),
+            defaultProgressUnReachColor = ta.getColor(R.styleable.ShapeRelativeLayout_defaultProgressUnReachColor, Color.TRANSPARENT),
             progressSolidWidth = ta.getDimension(R.styleable.ShapeRelativeLayout_progressSolidWidth, 0f),
             progress = ta.getFloat(R.styleable.ShapeRelativeLayout_progress , 0f),
             progressMax = ta.getFloat(R.styleable.ShapeRelativeLayout_progressMax, 0f),

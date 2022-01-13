@@ -20,7 +20,7 @@
 
             <com.iwdael.shapeview.ShapeView
                 style="@style/shape_round"
-                app:borderColor="#A1A1A1" />
+                app:defaultBorderColor="#A1A1A1" />
 
             <com.iwdael.shapeview.ShapeView
                 style="@style/shape_round"
@@ -35,7 +35,7 @@
 
             <com.iwdael.shapeview.ShapeView
                 style="@style/shape_oval"
-                app:borderColor="#A1A1A1" />
+                app:defaultBorderColor="#A1A1A1" />
 
             <com.iwdael.shapeview.ShapeView
                 style="@style/shape_oval"
@@ -50,7 +50,7 @@
 
             <com.iwdael.shapeview.ShapeView
                 style="@style/shape_circle"
-                app:borderColor="#A1A1A1" />
+                app:defaultBorderColor="#A1A1A1" />
 
             <com.iwdael.shapeview.ShapeView
                 style="@style/shape_circle"
@@ -65,7 +65,7 @@
 
             <com.iwdael.shapeview.ShapeView
                 style="@style/shape_radius"
-                app:borderColor="#A1A1A1" />
+                app:defaultBorderColor="#A1A1A1" />
 
             <com.iwdael.shapeview.ShapeView
                 style="@style/shape_radius"

@@ -26,12 +26,12 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
                 Color.TRANSPARENT
             ),
             borderWidth = ta.getDimension(R.styleable.ShapeLinearLayout_borderWidth, 0f),
-            borderColor = ta.getColor(
-                R.styleable.ShapeLinearLayout_borderColor,
+            defaultBorderColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_defaultBorderColor,
                 Color.TRANSPARENT
             ),
-            shadowColor = ta.getColor(
-                R.styleable.ShapeLinearLayout_shadowColor,
+            defaultShadowColor = ta.getColor(
+                R.styleable.ShapeLinearLayout_defaultShadowColor,
                 Color.TRANSPARENT
             ),
             shadow = ta.getDimension(R.styleable.ShapeLinearLayout_shadow, 1f),
@@ -57,10 +57,10 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
             rtRadius = ta.getDimension(R.styleable.ShapeLinearLayout_rtRadius, -1f),
             rbRadius = ta.getDimension(R.styleable.ShapeLinearLayout_rbRadius, -1f),
             progressStyle = ta.getInt(R.styleable.ShapeLinearLayout_progressStyle, 0).toProgressStyle(),
-            progressStrokeColor = ta.getColor(R.styleable.ShapeLinearLayout_progressStrokeColor, Color.TRANSPARENT),
+            defaultProgressStrokeColor = ta.getColor(R.styleable.ShapeLinearLayout_defaultProgressStrokeColor, Color.TRANSPARENT),
             progressStrokeWidth= ta.getDimension(R.styleable.ShapeLinearLayout_progressStrokeWidth,0f),
-            progressReachColor = ta.getColor(R.styleable.ShapeLinearLayout_progressReachColor, Color.TRANSPARENT),
-            progressUnReachColor = ta.getColor(R.styleable.ShapeLinearLayout_progressUnReachColor, Color.TRANSPARENT),
+            defaultProgressReachColor = ta.getColor(R.styleable.ShapeLinearLayout_defaultProgressReachColor, Color.TRANSPARENT),
+            defaultProgressUnReachColor = ta.getColor(R.styleable.ShapeLinearLayout_defaultProgressUnReachColor, Color.TRANSPARENT),
             progressSolidWidth = ta.getDimension(R.styleable.ShapeLinearLayout_progressSolidWidth, 0f),
             progress = ta.getFloat(R.styleable.ShapeLinearLayout_progress , 0f),
             progressMax = ta.getFloat(R.styleable.ShapeLinearLayout_progressMax, 0f),

@@ -4,10 +4,22 @@
     <attr name="pressedBackgroundColor" format="color" />
     <attr name="selectedBackgroundColor" format="color" />
     <attr name="focusedBackgroundColor" format="color" />
+    <attr name="checkedBackgroundColor" format="color" />
 
     <attr name="borderWidth" format="dimension" />
-    <attr name="borderColor" format="color" />
-    <attr name="shadowColor" format="color" />
+
+    <attr name="defaultBorderColor" format="color" />
+    <attr name="pressedBorderColor" format="color" />
+    <attr name="selectedBorderColor" format="color" />
+    <attr name="focusedBorderColor" format="color" />
+    <attr name="checkedBorderColor" format="color" />
+
+    <attr name="defaultShadowColor" format="color" />
+    <attr name="pressedShadowColor" format="color" />
+    <attr name="selectedShadowColor" format="color" />
+    <attr name="focusedShadowColor" format="color" />
+    <attr name="checkedShadowColor" format="color" />
+
     <attr name="shadowRadius" format="float" />
     <attr name="shadow" format="dimension" />
     <attr name="lShadow" format="dimension" />
@@ -30,19 +42,46 @@
         <enum name="sector" value="2" />
         <enum name="line" value="3" />
     </attr>
-    <attr name="progressReachColor" format="color" />
-    <attr name="progressUnReachColor" format="color" />
+    <attr name="defaultProgressReachColor" format="color" />
+    <attr name="pressedProgressReachColor" format="color" />
+    <attr name="selectedProgressReachColor" format="color" />
+    <attr name="focusedProgressReachColor" format="color" />
+    <attr name="checkedProgressReachColor" format="color" />
+
+    <attr name="defaultProgressUnReachColor" format="color" />
+    <attr name="pressedProgressUnReachColor" format="color" />
+    <attr name="selectedProgressUnReachColor" format="color" />
+    <attr name="focusedProgressUnReachColor" format="color" />
+    <attr name="checkedProgressUnReachColor" format="color" />
+
+
     <attr name="progressStrokeWidth" format="dimension" />
-    <attr name="progressStrokeColor" format="color" />
+    <attr name="defaultProgressStrokeColor" format="color" />
+    <attr name="pressedProgressStrokeColor" format="color" />
+    <attr name="selectedProgressStrokeColor" format="color" />
+    <attr name="focusedProgressStrokeColor" format="color" />
+    <attr name="checkedProgressStrokeColor" format="color" />
     <attr name="progressSolidWidth" format="dimension" />
     <attr name="progress" format="float" />
     <attr name="progressMax" format="float" />
     <attr name="enableDragProgress" format="boolean" />
     <declare-styleable name="ShapeView">
         <attr name="defaultBackgroundColor" />
+        <attr name="pressedBackgroundColor" />
+        <attr name="selectedBackgroundColor" />
+        <attr name="focusedBackgroundColor" />
+        <attr name="checkedBackgroundColor" />
         <attr name="borderWidth" />
-        <attr name="borderColor" />
-        <attr name="shadowColor" />
+        <attr name="defaultBorderColor" />
+        <attr name="pressedBorderColor" />
+        <attr name="selectedBorderColor" />
+        <attr name="focusedBorderColor" />
+        <attr name="checkedBorderColor" />
+        <attr name="defaultShadowColor" />
+        <attr name="pressedShadowColor" />
+        <attr name="selectedShadowColor" />
+        <attr name="focusedShadowColor" />
+        <attr name="checkedShadowColor" />
         <attr name="shadow" />
         <attr name="shadowRadius" />
         <attr name="lShadow" />
@@ -57,10 +96,24 @@
         <attr name="rtRadius" />
         <attr name="rbRadius" />
         <attr name="progressStyle" />
-        <attr name="progressReachColor" />
-        <attr name="progressUnReachColor" />
+
+        <attr name="defaultProgressReachColor" />
+        <attr name="pressedProgressReachColor" />
+        <attr name="selectedProgressReachColor" />
+        <attr name="focusedProgressReachColor" />
+        <attr name="checkedProgressReachColor" />
+        <attr name="defaultProgressUnReachColor" />
+        <attr name="pressedProgressUnReachColor" />
+        <attr name="selectedProgressUnReachColor" />
+        <attr name="focusedProgressUnReachColor" />
+        <attr name="checkedProgressUnReachColor" />
+
         <attr name="progressStrokeWidth" />
-        <attr name="progressStrokeColor" />
+        <attr name="defaultProgressStrokeColor" />
+        <attr name="pressedProgressStrokeColor" />
+        <attr name="selectedProgressStrokeColor" />
+        <attr name="focusedProgressStrokeColor" />
+        <attr name="checkedProgressStrokeColor" />
         <attr name="progressSolidWidth" />
         <attr name="progress" />
         <attr name="progressMax" />
@@ -69,9 +122,21 @@
 
     <declare-styleable name="ShapeTextView">
         <attr name="defaultBackgroundColor" />
+        <attr name="pressedBackgroundColor" />
+        <attr name="selectedBackgroundColor" />
+        <attr name="focusedBackgroundColor" />
+        <attr name="checkedBackgroundColor" />
         <attr name="borderWidth" />
-        <attr name="borderColor" />
-        <attr name="shadowColor" />
+        <attr name="defaultBorderColor" />
+        <attr name="pressedBorderColor" />
+        <attr name="selectedBorderColor" />
+        <attr name="focusedBorderColor" />
+        <attr name="checkedBorderColor" />
+        <attr name="defaultShadowColor" />
+        <attr name="pressedShadowColor" />
+        <attr name="selectedShadowColor" />
+        <attr name="focusedShadowColor" />
+        <attr name="checkedShadowColor" />
         <attr name="shadow" />
         <attr name="shadowRadius" />
         <attr name="lShadow" />
@@ -86,10 +151,22 @@
         <attr name="rtRadius" />
         <attr name="rbRadius" />
         <attr name="progressStyle" />
-        <attr name="progressReachColor" />
-        <attr name="progressUnReachColor" />
+        <attr name="defaultProgressReachColor" />
+        <attr name="pressedProgressReachColor" />
+        <attr name="selectedProgressReachColor" />
+        <attr name="focusedProgressReachColor" />
+        <attr name="checkedProgressReachColor" />
+        <attr name="defaultProgressUnReachColor" />
+        <attr name="pressedProgressUnReachColor" />
+        <attr name="selectedProgressUnReachColor" />
+        <attr name="focusedProgressUnReachColor" />
+        <attr name="checkedProgressUnReachColor" />
         <attr name="progressStrokeWidth" />
-        <attr name="progressStrokeColor" />
+        <attr name="defaultProgressStrokeColor" />
+        <attr name="pressedProgressStrokeColor" />
+        <attr name="selectedProgressStrokeColor" />
+        <attr name="focusedProgressStrokeColor" />
+        <attr name="checkedProgressStrokeColor" />
         <attr name="progressSolidWidth" />
         <attr name="progress" />
         <attr name="progressMax" />
@@ -98,9 +175,21 @@
 
     <declare-styleable name="ShapeRelativeLayout">
         <attr name="defaultBackgroundColor" />
+        <attr name="pressedBackgroundColor" />
+        <attr name="selectedBackgroundColor" />
+        <attr name="focusedBackgroundColor" />
+        <attr name="checkedBackgroundColor" />
         <attr name="borderWidth" />
-        <attr name="borderColor" />
-        <attr name="shadowColor" />
+        <attr name="defaultBorderColor" />
+        <attr name="pressedBorderColor" />
+        <attr name="selectedBorderColor" />
+        <attr name="focusedBorderColor" />
+        <attr name="checkedBorderColor" />
+        <attr name="defaultShadowColor" />
+        <attr name="pressedShadowColor" />
+        <attr name="selectedShadowColor" />
+        <attr name="focusedShadowColor" />
+        <attr name="checkedShadowColor" />
         <attr name="shadow" />
         <attr name="shadowRadius" />
         <attr name="lShadow" />
@@ -115,10 +204,22 @@
         <attr name="rtRadius" />
         <attr name="rbRadius" />
         <attr name="progressStyle" />
-        <attr name="progressReachColor" />
-        <attr name="progressUnReachColor" />
+        <attr name="defaultProgressReachColor" />
+        <attr name="pressedProgressReachColor" />
+        <attr name="selectedProgressReachColor" />
+        <attr name="focusedProgressReachColor" />
+        <attr name="checkedProgressReachColor" />
+        <attr name="defaultProgressUnReachColor" />
+        <attr name="pressedProgressUnReachColor" />
+        <attr name="selectedProgressUnReachColor" />
+        <attr name="focusedProgressUnReachColor" />
+        <attr name="checkedProgressUnReachColor" />
         <attr name="progressStrokeWidth" />
-        <attr name="progressStrokeColor" />
+        <attr name="defaultProgressStrokeColor" />
+        <attr name="pressedProgressStrokeColor" />
+        <attr name="selectedProgressStrokeColor" />
+        <attr name="focusedProgressStrokeColor" />
+        <attr name="checkedProgressStrokeColor" />
         <attr name="progressSolidWidth" />
         <attr name="progress" />
         <attr name="progressMax" />
@@ -128,9 +229,21 @@
 
     <declare-styleable name="ShapeFrameLayout">
         <attr name="defaultBackgroundColor" />
+        <attr name="pressedBackgroundColor" />
+        <attr name="selectedBackgroundColor" />
+        <attr name="focusedBackgroundColor" />
+        <attr name="checkedBackgroundColor" />
         <attr name="borderWidth" />
-        <attr name="borderColor" />
-        <attr name="shadowColor" />
+        <attr name="defaultBorderColor" />
+        <attr name="pressedBorderColor" />
+        <attr name="selectedBorderColor" />
+        <attr name="focusedBorderColor" />
+        <attr name="checkedBorderColor" />
+        <attr name="defaultShadowColor" />
+        <attr name="pressedShadowColor" />
+        <attr name="selectedShadowColor" />
+        <attr name="focusedShadowColor" />
+        <attr name="checkedShadowColor" />
         <attr name="shadow" />
         <attr name="shadowRadius" />
         <attr name="lShadow" />
@@ -145,10 +258,22 @@
         <attr name="rtRadius" />
         <attr name="rbRadius" />
         <attr name="progressStyle" />
-        <attr name="progressReachColor" />
-        <attr name="progressUnReachColor" />
+        <attr name="defaultProgressReachColor" />
+        <attr name="pressedProgressReachColor" />
+        <attr name="selectedProgressReachColor" />
+        <attr name="focusedProgressReachColor" />
+        <attr name="checkedProgressReachColor" />
+        <attr name="defaultProgressUnReachColor" />
+        <attr name="pressedProgressUnReachColor" />
+        <attr name="selectedProgressUnReachColor" />
+        <attr name="focusedProgressUnReachColor" />
+        <attr name="checkedProgressUnReachColor" />
         <attr name="progressStrokeWidth" />
-        <attr name="progressStrokeColor" />
+        <attr name="defaultProgressStrokeColor" />
+        <attr name="pressedProgressStrokeColor" />
+        <attr name="selectedProgressStrokeColor" />
+        <attr name="focusedProgressStrokeColor" />
+        <attr name="checkedProgressStrokeColor" />
         <attr name="progressSolidWidth" />
         <attr name="progress" />
         <attr name="progressMax" />
@@ -158,9 +283,21 @@
 
     <declare-styleable name="ShapeLinearLayout">
         <attr name="defaultBackgroundColor" />
+        <attr name="pressedBackgroundColor" />
+        <attr name="selectedBackgroundColor" />
+        <attr name="focusedBackgroundColor" />
+        <attr name="checkedBackgroundColor" />
         <attr name="borderWidth" />
-        <attr name="borderColor" />
-        <attr name="shadowColor" />
+        <attr name="defaultBorderColor" />
+        <attr name="pressedBorderColor" />
+        <attr name="selectedBorderColor" />
+        <attr name="focusedBorderColor" />
+        <attr name="checkedBorderColor" />
+        <attr name="defaultShadowColor" />
+        <attr name="pressedShadowColor" />
+        <attr name="selectedShadowColor" />
+        <attr name="focusedShadowColor" />
+        <attr name="checkedShadowColor" />
         <attr name="shadow" />
         <attr name="shadowRadius" />
         <attr name="lShadow" />
@@ -175,10 +312,22 @@
         <attr name="rtRadius" />
         <attr name="rbRadius" />
         <attr name="progressStyle" />
-        <attr name="progressReachColor" />
-        <attr name="progressUnReachColor" />
+        <attr name="defaultProgressReachColor" />
+        <attr name="pressedProgressReachColor" />
+        <attr name="selectedProgressReachColor" />
+        <attr name="focusedProgressReachColor" />
+        <attr name="checkedProgressReachColor" />
+        <attr name="defaultProgressUnReachColor" />
+        <attr name="pressedProgressUnReachColor" />
+        <attr name="selectedProgressUnReachColor" />
+        <attr name="focusedProgressUnReachColor" />
+        <attr name="checkedProgressUnReachColor" />
         <attr name="progressStrokeWidth" />
-        <attr name="progressStrokeColor" />
+        <attr name="defaultProgressStrokeColor" />
+        <attr name="pressedProgressStrokeColor" />
+        <attr name="selectedProgressStrokeColor" />
+        <attr name="focusedProgressStrokeColor" />
+        <attr name="checkedProgressStrokeColor" />
         <attr name="progressSolidWidth" />
         <attr name="progress" />
         <attr name="progressMax" />
