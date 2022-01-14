@@ -1,9 +1,13 @@
 package com.iwdael.shapeview
 
+import android.animation.ValueAnimator
 import android.graphics.*
 import android.view.MotionEvent
 import android.view.View
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.Animation
 import com.iwdael.shapeview.path.base.PathMaker
+import kotlin.math.abs
 
 /**
  * author : Iwdael
@@ -19,6 +23,7 @@ class ShapeLayer(private val view: View, val attr: Attrs) {
     private val pmProgress = Pms(3) //进度
 
     private val pathMaker = PathMaker.obtainMaker(attr, pmRect, pmBorder, pmProgress)
+    private var anim: ValueAnimator? = null
 
     init {
         view.setBackgroundColor(Color.TRANSPARENT)
@@ -27,6 +32,36 @@ class ShapeLayer(private val view: View, val attr: Attrs) {
         attr.renderProgressPaint(view, pmProgress)
     }
 
+    fun setProgress(progress: Float) {
+        val willProgress = when {
+            progress < 0f -> 0f
+            progress > attr.progressMax -> attr.progressMax
+            else -> progress
+        }
+        if (attr.progress == willProgress) return
+        attr.progress = willProgress
+        view.invalidate()
+    }
+
+    fun setProgress(progress: Float, duration: Long) {
+        val willProgress = when {
+            progress < 0f -> 0f
+            progress > attr.progressMax -> attr.progressMax
+            else -> progress
+        }
+        if (attr.progress == willProgress) return
+        anim?.removeAllUpdateListeners()
+        anim?.cancel()
+        anim = ValueAnimator.ofFloat(attr.progress, willProgress)
+        anim?.duration = ((abs(attr.progress - willProgress) / attr.progressMax) * duration).toLong()
+        anim?.interpolator = AccelerateDecelerateInterpolator()
+        anim?.addUpdateListener {
+            val value = it.animatedValue as Float
+            attr.progress = value
+            view.invalidate()
+        }
+        anim?.start()
+    }
 
     fun sizeChange(width: Int, height: Int) {
         pathMaker.reset(width, height)

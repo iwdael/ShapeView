@@ -23,6 +23,7 @@
                 app:defaultBorderColor="#A1A1A1" />
 
             <com.iwdael.shapeview.ShapeView
+                android:id="@+id/sv_round"
                 style="@style/shape_round"
                 app:progressStyle="line" />
         </LinearLayout>

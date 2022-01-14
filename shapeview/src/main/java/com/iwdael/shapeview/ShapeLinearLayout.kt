@@ -5,9 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.util.AttributeSet
 import android.view.MotionEvent
-import android.view.View
 import android.widget.LinearLayout
-import android.widget.RelativeLayout
 
 /**
  * author : Iwdael
@@ -19,7 +17,7 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
     constructor(context: Context) : this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
-    private val rect: ShapeLayer
+    private val shapeLayer: ShapeLayer
 
     init {
         val ta = context.obtainStyledAttributes(attrs, R.styleable.ShapeLinearLayout)
@@ -202,12 +200,12 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
             enableDragProgress = ta.getBoolean(R.styleable.ShapeLinearLayout_enableDragProgress, false),
         )
         ta.recycle()
-        rect = ShapeLayer(this, attr)
+        shapeLayer = ShapeLayer(this, attr)
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        return if (rect.attr.validProgress() && rect.attr.enableDragProgress) {
-            rect.onTouchEvent(event)
+        return if (shapeLayer.attr.validProgress() && shapeLayer.attr.enableDragProgress) {
+            shapeLayer.onTouchEvent(event)
             super.onTouchEvent(event)
             true
         } else {
@@ -217,24 +215,24 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
 
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-        rect.sizeChange(w, h)
+        shapeLayer.sizeChange(w, h)
         super.onSizeChanged(w, h, oldw, oldh)
     }
 
     override fun onDraw(canvas: Canvas) {
-        rect.draw(canvas)
+        shapeLayer.draw(canvas)
         super.onDraw(canvas)
     }
 
     override fun setSelected(selected: Boolean) {
         super.setSelected(selected)
-        rect.attr.refreshStateColor(State.SELECTED, selected)
+        shapeLayer.attr.refreshStateColor(State.SELECTED, selected)
         invalidate()
     }
 
     override fun setPressed(pressed: Boolean) {
         super.setPressed(pressed)
-        rect.attr.refreshStateColor(State.PRESSED, pressed)
+        shapeLayer.attr.refreshStateColor(State.PRESSED, pressed)
         invalidate()
     }
 
