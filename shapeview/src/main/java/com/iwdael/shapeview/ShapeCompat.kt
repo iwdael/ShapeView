@@ -1,6 +1,7 @@
 package com.iwdael.shapeview
 
 import android.graphics.*
+import java.math.BigDecimal
 import kotlin.math.PI
 import kotlin.math.asin
 import kotlin.math.sqrt
@@ -61,7 +62,7 @@ fun createRadii(rad: Float): FloatArray {
 fun makeLinearGradient(
     cur: Float, max: Float, rad: Float, unReach: Int, reach: Int, start: PointF, end: PointF
 ): LinearGradient {
-    val step = 1 / max
+    val step = 1f / max
     val colorArr = mutableListOf<Int>()
     val positionArr = mutableListOf<Float>()
     val range = floatArrayOf(0f, 0f, 0f, 0f)
@@ -72,6 +73,7 @@ fun makeLinearGradient(
         range[1] = range[0] + offset
         range[2] = range[1] + sheet
         range[3] = range[2] + offset
+        Logger.v("--", "range:[${range[0]} ,${range[1]} ,${range[2]} ,${range[3]}]")
         if (index < cur) {
             if (index == cur.toInt()) {
                 colorArr.add(Color.TRANSPARENT)
@@ -123,4 +125,74 @@ fun makeLinearGradient(
         start.x, start.y, end.x, end.y,
         colorArr.toIntArray(), positionArr.toFloatArray(), Shader.TileMode.CLAMP
     )
+}
+
+fun Float.keepDecimals(num: Int): Float {
+    return java.lang.String.format("%.${num}f", this).toFloat()
+}
+
+fun makeSweepGradient(
+    cur: Float, max: Float, rad: Float, unReach: Int, reach: Int, center: PointF
+): SweepGradient {
+    val step = 1 / max
+    val colorArr = mutableListOf<Int>()
+    val positionArr = mutableListOf<Float>()
+    val range = floatArrayOf(0f, 0f, 0f, 0f)
+    val sheet = step * rad
+    val offset = ((1f - rad) / 2f) * step
+    for (index in 0 until max.toInt()) {
+        range[0] = (step * index).keepDecimals(3)
+        range[1] = (range[0] + offset).keepDecimals(3)
+        range[2] = (range[1] + sheet).keepDecimals(3)
+        range[3] = (range[0] + step).keepDecimals(3)
+//        Logger.v("--", "range:[${range[0]} ,${range[1]} ,${range[2]} ,${range[3]}]")
+        if (index < cur) {
+            if (index == cur.toInt()) {
+                colorArr.add(Color.TRANSPARENT)
+                colorArr.add(Color.TRANSPARENT)
+                colorArr.add(reach)
+                colorArr.add(reach)
+                colorArr.add(unReach)
+                colorArr.add(unReach)
+                colorArr.add(Color.TRANSPARENT)
+                colorArr.add(Color.TRANSPARENT)
+                positionArr.add(range[0])
+                positionArr.add(range[1])
+                positionArr.add(range[1])
+                positionArr.add(range[1] + step * rad * (cur - cur.toInt().toFloat()))
+                positionArr.add(range[1] + step * rad * (cur - cur.toInt().toFloat()))
+                positionArr.add(range[2])
+                positionArr.add(range[2])
+                positionArr.add(range[3])
+            } else {
+                colorArr.add(Color.TRANSPARENT) //0
+                colorArr.add(Color.TRANSPARENT) //1
+                colorArr.add(reach) //1
+                colorArr.add(reach) //2
+                colorArr.add(Color.TRANSPARENT)//2
+                colorArr.add(Color.TRANSPARENT) //3
+                positionArr.add(range[0])
+                positionArr.add(range[1])
+                positionArr.add(range[1])
+                positionArr.add(range[2])
+                positionArr.add(range[2])
+                positionArr.add(range[3])
+                Logger.v("--", "position:[${range[0]} ,${range[1]} ,${range[1]} ,${range[2]} ,${range[2]} ,${range[3]}]")
+            }
+        } else {
+            colorArr.add(Color.TRANSPARENT)
+            colorArr.add(Color.TRANSPARENT)
+            colorArr.add(unReach)
+            colorArr.add(unReach)
+            colorArr.add(Color.TRANSPARENT)
+            colorArr.add(Color.TRANSPARENT)
+            positionArr.add(range[0])
+            positionArr.add(range[1])
+            positionArr.add(range[1])
+            positionArr.add(range[2])
+            positionArr.add(range[2])
+            positionArr.add(range[3])
+        }
+    }
+     return SweepGradient(center.x, center.y, colorArr.toIntArray(), positionArr.toFloatArray())
 }

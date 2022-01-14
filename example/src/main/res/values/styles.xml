@@ -21,7 +21,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">60dp</item>
         <item name="progress">5</item>
-        <item name="progressMax">10</item>
+        <item name="progressMax">20</item>
         <item name="defaultProgressReachColor">#8BC34A</item>
         <item name="touchedProgressReachColor">#FF5722</item>
         <item name="defaultProgressUnReachColor">#758BC34A</item>
@@ -30,7 +30,6 @@
         <item name="progressStrokeWidth">1dp</item>
         <item name="borderWidth">5dp</item>
         <item name="enableDragProgress">true</item>
-        <item name="progressSheetRadius">0.5</item>
     </style>
 
     <style name="shape_oval">

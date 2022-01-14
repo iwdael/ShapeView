@@ -7,143 +7,132 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:orientation="vertical">-->
-
-    <!--        <LinearLayout style="@style/layout_horizontal">-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_round"-->
-    <!--                app:defaultBackgroundColor="#00BCD4" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_round"-->
-    <!--                app:defaultBorderColor="#A1A1A1" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                android:id="@+id/sv_round"-->
-    <!--                style="@style/shape_round"-->
-    <!--                app:progressStyle="line" />-->
-    <!--        </LinearLayout>-->
-
-    <!--        <LinearLayout style="@style/layout_horizontal">-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_oval"-->
-    <!--                app:defaultBackgroundColor="#00BCD4" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_oval"-->
-    <!--                app:defaultBorderColor="#A1A1A1" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_oval"-->
-    <!--                app:progressStyle="line" />-->
-    <!--        </LinearLayout>-->
-
-    <!--        <LinearLayout style="@style/layout_horizontal">-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_circle"-->
-    <!--                app:defaultBackgroundColor="#00BCD4" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_circle"-->
-    <!--                app:defaultBorderColor="#A1A1A1" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_circle"-->
-    <!--                app:progressStyle="line" />-->
-    <!--        </LinearLayout>-->
-
-    <!--        <LinearLayout style="@style/layout_horizontal">-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_radius"-->
-    <!--                app:defaultBackgroundColor="#00BCD4" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_radius"-->
-    <!--                app:defaultBorderColor="#A1A1A1" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_radius"-->
-    <!--                app:progressStyle="line" />-->
-    <!--        </LinearLayout>-->
-
-    <!--        <LinearLayout style="@style/layout_horizontal">-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_radius"-->
-    <!--                app:progressStyle="line" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_radius"-->
-    <!--                app:progressStyle="sector" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_radius"-->
-    <!--                app:progressStyle="border" />-->
-    <!--        </LinearLayout>-->
-
-    <!--        <LinearLayout style="@style/layout_horizontal">-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_round"-->
-    <!--                app:progressStyle="line" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_round"-->
-    <!--                app:progressStyle="sector" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_round"-->
-    <!--                app:progressStyle="border" />-->
-    <!--        </LinearLayout>-->
-
-    <!--        <LinearLayout style="@style/layout_horizontal">-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_oval"-->
-    <!--                app:progressStyle="line" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_oval"-->
-    <!--                app:progressStyle="sector" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_oval"-->
-    <!--                app:progressStyle="border" />-->
-    <!--        </LinearLayout>-->
-
-
-    <!--        <LinearLayout style="@style/layout_horizontal">-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_circle"-->
-    <!--                app:progressStyle="line" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_circle"-->
-    <!--                app:progressStyle="sector" />-->
-
-    <!--            <com.iwdael.shapeview.ShapeView-->
-    <!--                style="@style/shape_circle"-->
-    <!--                app:progressStyle="border" />-->
-    <!--        </LinearLayout>-->
-    <!--    </LinearLayout>-->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.iwdael.shapeview.ShapeView
-            android:id="@+id/sv_round"
-            style="@style/shape_round"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:progressStyle="line" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/layout_horizontal">
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_round"
+                    app:defaultBackgroundColor="#00BCD4" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_round"
+                    app:defaultBorderColor="#A1A1A1" />
+
+                <com.iwdael.shapeview.ShapeView
+                    android:id="@+id/sv_round"
+                    style="@style/shape_round"
+                    app:progressStyle="line" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/layout_horizontal">
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_oval"
+                    app:defaultBackgroundColor="#00BCD4" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_oval"
+                    app:defaultBorderColor="#A1A1A1" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_oval"
+                    app:progressStyle="line" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/layout_horizontal">
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_circle"
+                    app:defaultBackgroundColor="#00BCD4" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_circle"
+                    app:defaultBorderColor="#A1A1A1" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_circle"
+                    app:progressStyle="line" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/layout_horizontal">
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_radius"
+                    app:defaultBackgroundColor="#00BCD4" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_radius"
+                    app:defaultBorderColor="#A1A1A1" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_radius"
+                    app:progressStyle="line" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/layout_horizontal">
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_radius"
+                    app:progressStyle="line" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_radius"
+                    app:progressStyle="sector" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_radius"
+                    app:progressStyle="border" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/layout_horizontal">
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_round"
+                    app:progressStyle="line" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_round"
+                    app:progressStyle="sector" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_round"
+                    app:progressStyle="border" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/layout_horizontal">
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_oval"
+                    app:progressStyle="line" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_oval"
+                    app:progressStyle="sector" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_oval"
+                    app:progressStyle="border" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/layout_horizontal">
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_circle"
+                    app:progressStyle="line" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_circle"
+                    app:progressStyle="sector" />
+
+                <com.iwdael.shapeview.ShapeView
+                    style="@style/shape_circle"
+                    app:progressStyle="border" />
+            </LinearLayout>
+        </LinearLayout>
+
 </ScrollView>
