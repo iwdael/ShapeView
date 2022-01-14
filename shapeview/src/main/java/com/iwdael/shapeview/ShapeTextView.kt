@@ -12,7 +12,8 @@ import android.view.MotionEvent
  * time   : 2019/8/5
  * version: 1.0
  */
-class ShapeTextView(cxt: Context, attrs: AttributeSet?, def: Int) : androidx.appcompat.widget.AppCompatTextView(cxt, attrs, def) {
+class ShapeTextView(cxt: Context, attrs: AttributeSet?, def: Int) :
+    androidx.appcompat.widget.AppCompatTextView(cxt, attrs, def) {
     constructor(context: Context) : this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
@@ -101,7 +102,10 @@ class ShapeTextView(cxt: Context, attrs: AttributeSet?, def: Int) : androidx.app
             leftShadowPadding = ta.getDimension(R.styleable.ShapeTextView_leftShadowPadding, -1f),
             topShadowPadding = ta.getDimension(R.styleable.ShapeTextView_topShadowPadding, -1f),
             rightShadowPadding = ta.getDimension(R.styleable.ShapeTextView_rightShadowPadding, -1f),
-            bottomShadowPadding = ta.getDimension(R.styleable.ShapeTextView_bottomShadowPadding, -1f),
+            bottomShadowPadding = ta.getDimension(
+                R.styleable.ShapeTextView_bottomShadowPadding,
+                -1f
+            ),
             shadowDx = ta.getDimension(R.styleable.ShapeTextView_shadowDx, 0f),
             shadowDy = ta.getDimension(R.styleable.ShapeTextView_shadowDy, 0f),
             radius = try {
@@ -144,7 +148,10 @@ class ShapeTextView(cxt: Context, attrs: AttributeSet?, def: Int) : androidx.app
                 Color.TRANSPARENT
             ),
 
-            progressStrokeWidth = ta.getDimension(R.styleable.ShapeTextView_progressStrokeWidth, 0f),
+            progressStrokeWidth = ta.getDimension(
+                R.styleable.ShapeTextView_progressStrokeWidth,
+                0f
+            ),
             defaultProgressReachColor = ta.getColor(
                 R.styleable.ShapeTextView_defaultProgressReachColor,
                 Color.TRANSPARENT
@@ -197,7 +204,12 @@ class ShapeTextView(cxt: Context, attrs: AttributeSet?, def: Int) : androidx.app
             progress = ta.getFloat(R.styleable.ShapeTextView_progress, 0f),
             progressMax = ta.getFloat(R.styleable.ShapeTextView_progressMax, 0f),
             enableDragProgress = ta.getBoolean(R.styleable.ShapeTextView_enableDragProgress, false),
-        )
+            progressSheetRadius = ta.getDimension(
+                R.styleable.ShapeTextView_progressSheetRadius,
+                0f
+            ),
+
+            )
         ta.recycle()
         shapeLayer = ShapeLayer(this, attr)
     }

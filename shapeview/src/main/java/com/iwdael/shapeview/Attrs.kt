@@ -72,6 +72,7 @@ class Attrs(
     var progress: Float,
     val progressMax: Float,
     val enableDragProgress: Boolean,
+    val progressSheetRadius: Float,
 ) {
     private val states = mutableMapOf<String, State>()
 
@@ -175,7 +176,8 @@ class Attrs(
     fun leftShadowPadding() = if (leftShadowPadding != -1f) leftShadowPadding else shadowPadding
     fun rightShadowPadding() = if (rightShadowPadding != -1f) rightShadowPadding else shadowPadding
     fun topShadowPadding() = if (topShadowPadding != -1f) topShadowPadding else shadowPadding
-    fun bottomShadowPadding() = if (bottomShadowPadding != -1f) bottomShadowPadding else shadowPadding
+    fun bottomShadowPadding() =
+        if (bottomShadowPadding != -1f) bottomShadowPadding else shadowPadding
 
 
     fun renderRectPaint(view: View, pms: Pms) {
