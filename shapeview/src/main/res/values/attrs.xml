@@ -35,6 +35,7 @@
         <enum name="round" value="1" />
         <enum name="oval" value="2" />
         <enum name="circle" value="3" />
+        <enum name="sheet" value="4" />
     </attr>
     <attr name="ltRadius" format="dimension" />
     <attr name="lbRadius" format="dimension" />

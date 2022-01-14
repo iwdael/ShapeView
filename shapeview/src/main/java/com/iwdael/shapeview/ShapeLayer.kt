@@ -51,7 +51,7 @@ class ShapeLayer(private val view: View, val attr: Attrs) {
         }
         if (attr.progress == willProgress) return
         anim?.removeAllUpdateListeners()
-        anim?.cancel()
+        try {anim?.cancel()}catch (e:Exception){}
         anim = ValueAnimator.ofFloat(attr.progress, willProgress)
         anim?.duration = ((abs(attr.progress - willProgress) / attr.progressMax) * duration).toLong()
         anim?.interpolator = AccelerateDecelerateInterpolator()
