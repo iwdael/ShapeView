@@ -198,9 +198,9 @@ class ShapeFrameLayout(cxt: Context, attrs: AttributeSet?, def: Int) : FrameLayo
             progress = ta.getFloat(R.styleable.ShapeFrameLayout_progress, 0f),
             progressMax = ta.getFloat(R.styleable.ShapeFrameLayout_progressMax, 0f),
             enableDragProgress = ta.getBoolean(R.styleable.ShapeFrameLayout_enableDragProgress, false),
-            progressSheetRadius = ta.getDimension(
+            progressSheetRadius = ta.getFloat(
                 R.styleable.ShapeFrameLayout_progressSheetRadius,
-                0f
+                1f
             ),
         )
         ta.recycle()

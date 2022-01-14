@@ -198,9 +198,9 @@ class ShapeLinearLayout(cxt: Context, attrs: AttributeSet?, def: Int) : LinearLa
             progress = ta.getFloat(R.styleable.ShapeLinearLayout_progress, 0f),
             progressMax = ta.getFloat(R.styleable.ShapeLinearLayout_progressMax, 0f),
             enableDragProgress = ta.getBoolean(R.styleable.ShapeLinearLayout_enableDragProgress, false),
-            progressSheetRadius = ta.getDimension(
+            progressSheetRadius = ta.getFloat(
                 R.styleable.ShapeLinearLayout_progressSheetRadius,
-                0f
+                1f
             ),
         )
         ta.recycle()

@@ -198,9 +198,9 @@ class ShapeRelativeLayout(cxt: Context, attrs: AttributeSet?, def: Int) : Relati
             progress = ta.getFloat(R.styleable.ShapeRelativeLayout_progress, 0f),
             progressMax = ta.getFloat(R.styleable.ShapeRelativeLayout_progressMax, 0f),
             enableDragProgress = ta.getBoolean(R.styleable.ShapeRelativeLayout_enableDragProgress, false),
-            progressSheetRadius = ta.getDimension(
+            progressSheetRadius = ta.getFloat(
                 R.styleable.ShapeRelativeLayout_progressSheetRadius,
-                0f
+                1f
             ),
         )
         ta.recycle()

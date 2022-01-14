@@ -72,7 +72,7 @@
     <attr name="progress" format="float" />
     <attr name="progressMax" format="float" />
     <attr name="enableDragProgress" format="boolean" />
-    <attr name="progressSheetRadius" format="dimension" />
+    <attr name="progressSheetRadius" format="float" />
     <declare-styleable name="ShapeView">
         <attr name="defaultBackgroundColor" />
         <attr name="pressedBackgroundColor" />

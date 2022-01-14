@@ -204,9 +204,9 @@ class ShapeTextView(cxt: Context, attrs: AttributeSet?, def: Int) :
             progress = ta.getFloat(R.styleable.ShapeTextView_progress, 0f),
             progressMax = ta.getFloat(R.styleable.ShapeTextView_progressMax, 0f),
             enableDragProgress = ta.getBoolean(R.styleable.ShapeTextView_enableDragProgress, false),
-            progressSheetRadius = ta.getDimension(
+            progressSheetRadius = ta.getFloat(
                 R.styleable.ShapeTextView_progressSheetRadius,
-                0f
+                1f
             ),
 
             )

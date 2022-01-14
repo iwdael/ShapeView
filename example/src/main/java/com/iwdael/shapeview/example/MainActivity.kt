@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         sv_round.postDelayed({
-            sv_round.setProgress(100f, 1000)
+//            sv_round.setProgress(100f, 1000)
         }, 1000)
     }
 }

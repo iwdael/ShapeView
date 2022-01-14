@@ -198,7 +198,7 @@ class ShapeView(cxt: Context, attrs: AttributeSet?, def: Int) : View(cxt, attrs,
             progress = ta.getFloat(R.styleable.ShapeView_progress, 0f),
             progressMax = ta.getFloat(R.styleable.ShapeView_progressMax, 0f),
             enableDragProgress = ta.getBoolean(R.styleable.ShapeView_enableDragProgress, false),
-            progressSheetRadius = ta.getDimension(R.styleable.ShapeView_progressSheetRadius, 0f),
+            progressSheetRadius = ta.getFloat(R.styleable.ShapeView_progressSheetRadius, 1f),
         )
         ta.recycle()
         shapeLayer = ShapeLayer(this, attr)

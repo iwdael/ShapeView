@@ -134,25 +134,18 @@ class RoundPathMaker(attr: Attrs, pmRect: Pms, pmBorder: Pms, pmProgress: Pms) :
     }
 
     private fun drawProgressLine(canvas: Canvas) {
-        pmProgress[1].paint.shader = LinearGradient(
-            contentRectF.left,
-            contentRectF.centerY(),
-            contentRectF.right,
-            contentRectF.centerY(),
-            intArrayOf(
-                attr.progressReachColor(),
-                attr.progressReachColor(),
+        pmProgress[1].paint.shader =
+            makeLinearGradient(
+                attr.progress,
+                attr.progressMax,
+                attr.progressSheetRadius,
                 attr.progressUnReachColor(),
-                attr.progressUnReachColor()
-            ),
-            floatArrayOf(
-                0f,
-                attr.progress / attr.progressMax,
-                attr.progress / attr.progressMax,
-                1f
-            ),
-            Shader.TileMode.CLAMP
-        )
+                attr.progressReachColor(),
+                PointF(contentRectF.left,
+                    contentRectF.centerY()),
+                PointF(contentRectF.right,
+                    contentRectF.centerY())
+            )
         canvas.drawPath(pmProgress[1].path, pmProgress[1].paint)
         canvas.drawPath(pmProgress[0].path, pmProgress[0].paint)
 

@@ -1,6 +1,6 @@
 package com.iwdael.shapeview
 
-import android.graphics.RectF
+import android.graphics.*
 import kotlin.math.PI
 import kotlin.math.asin
 import kotlin.math.sqrt
@@ -55,5 +55,72 @@ fun createRadii(rad: Float): FloatArray {
         rad, rad,
         rad, rad,
         rad, rad,
+    )
+}
+
+fun makeLinearGradient(
+    cur: Float, max: Float, rad: Float, unReach: Int, reach: Int, start: PointF, end: PointF
+): LinearGradient {
+    val step = 1 / max
+    val colorArr = mutableListOf<Int>()
+    val positionArr = mutableListOf<Float>()
+    val range = floatArrayOf(0f, 0f, 0f, 0f)
+    val sheet = step * rad
+    val offset = ((1f - rad) / 2f) * step
+    for (index in 0 until max.toInt()) {
+        range[0] = step * index
+        range[1] = range[0] + offset
+        range[2] = range[1] + sheet
+        range[3] = range[2] + offset
+        if (index < cur) {
+            if (index == cur.toInt()) {
+                colorArr.add(Color.TRANSPARENT)
+                colorArr.add(Color.TRANSPARENT)
+                colorArr.add(reach)
+                colorArr.add(reach)
+                colorArr.add(unReach)
+                colorArr.add(unReach)
+                colorArr.add(Color.TRANSPARENT)
+                colorArr.add(Color.TRANSPARENT)
+                positionArr.add(range[0])
+                positionArr.add(range[1])
+                positionArr.add(range[1])
+                positionArr.add(range[1] + step * rad * (cur - cur.toInt().toFloat()))
+                positionArr.add(range[1] + step * rad * (cur - cur.toInt().toFloat()))
+                positionArr.add(range[2])
+                positionArr.add(range[2])
+                positionArr.add(range[3])
+            } else {
+                colorArr.add(Color.TRANSPARENT)
+                colorArr.add(Color.TRANSPARENT)
+                colorArr.add(reach)
+                colorArr.add(reach)
+                colorArr.add(Color.TRANSPARENT)
+                colorArr.add(Color.TRANSPARENT)
+                positionArr.add(range[0])
+                positionArr.add(range[1])
+                positionArr.add(range[1])
+                positionArr.add(range[2])
+                positionArr.add(range[2])
+                positionArr.add(range[3])
+            }
+        } else {
+            colorArr.add(Color.TRANSPARENT)
+            colorArr.add(Color.TRANSPARENT)
+            colorArr.add(unReach)
+            colorArr.add(unReach)
+            colorArr.add(Color.TRANSPARENT)
+            colorArr.add(Color.TRANSPARENT)
+            positionArr.add(range[0])
+            positionArr.add(range[1])
+            positionArr.add(range[1])
+            positionArr.add(range[2])
+            positionArr.add(range[2])
+            positionArr.add(range[3])
+        }
+    }
+    return LinearGradient(
+        start.x, start.y, end.x, end.y,
+        colorArr.toIntArray(), positionArr.toFloatArray(), Shader.TileMode.CLAMP
     )
 }
