@@ -1,4 +1,4 @@
-# Immersive
+# ShapeView
 ![](https://img.shields.io/badge/platform-android-orange.svg)
 ![](https://img.shields.io/badge/language-java-yellow.svg)
 ![](https://jitpack.io/v/com.iwdael/shapeview.svg)
